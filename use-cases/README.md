@@ -1,5 +1,9 @@
 # PingOne SSO Flow Templates
 
+These are a set of standard base PingOne flows for DaVinci. They include Ping branded pages that will have to be modified based on your own requirements.  These flows are meant to be only a reference and should be modified based on your unique requirements and tested before deploying into a production environment. 
+
+Please submit any feedback and recommendations to the owner of the templates. Keep checking back as these will be updated periodically with improvements.
+
 ## PingOne Sign On and Password Reset
 This flow is used to create custom authentication flows and includes the ability for users to reset or recover their passwords.
 Flow Listing: https://support.pingidentity.com/s/marketplace-integration/a7i8Z000000bsa3QAA/davinci-flow-pingone-sign-on-and-password-reset
