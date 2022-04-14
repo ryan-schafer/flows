@@ -6,6 +6,7 @@ Please submit any feedback and recommendations to the owner of the templates. Ke
 
 ## PingOne Sign On and Password Reset
 This flow is used to create custom authentication flows and includes the ability for users to reset or recover their passwords.
+
 Flow Listing: https://support.pingidentity.com/s/marketplace-integration/a7i8Z000000bsa3QAA/davinci-flow-pingone-sign-on-and-password-reset
 Owner: Nathan Langton (nlangton@pingidentity.com)
 
