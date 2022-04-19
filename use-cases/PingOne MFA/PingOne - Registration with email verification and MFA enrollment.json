@@ -3,7 +3,7 @@
   "flowStatus": "enabled",
   "currentVersion": 21,
   "publishedVersion": 21,
-  "name": "PingOne - Register with verify email and OTP auto-enrollment",
+  "name": "PingOne - registration with email verification and MFA enrollment",
   "description": "Used to create registration flows and gracefully setting the users' email as an MFA device",
   "createdDate": 1643851805567,
   "updatedDate": 1643851806148,
