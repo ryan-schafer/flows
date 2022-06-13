@@ -1,32 +1,14 @@
 {
-  "customerId": "c367f919c72e48012f761e1024c7a7f2",
+  "customerId": "cf8116fb1aac26dffd0d7b9e9e6f3d1d",
   "flowStatus": "enabled",
-  "currentVersion": 30,
-  "publishedVersion": 30,
+  "currentVersion": 65,
+  "publishedVersion": null,
   "name": "Registration - 1",
-  "description": "Standard registration of email address and password. Verify email and enroll the email address as an MFA method.",
-  "createdDate": 1651682385149,
-  "updatedDate": 1651696155902,
-  "authTokenExpireIds": [],
-  "deployedDate": 1651696155901,
-  "functionConnectionId": null,
-  "isOutputSchemaSaved": false,
-  "outputSchemaCompiled": null,
-  "settings": {
-    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
-    "intermediateLoadingScreenCSS": "",
-    "intermediateLoadingScreenHTML": "",
-    "cssLinks": [
-      "https://assets.pingone.com/ux/end-user/1.7.0/end-user.css"
-    ],
-    "useCustomCSS": true,
-    "debugMode": true,
-    "css": "body, .page {\n  background-color: #ededed !important;\n}\n\n.buttonLink {\n  background: none !important;\n  border: none;\n  cursor: pointer;\n  color: #2996cc;\n  font-size: 15px;\n}"
-  },
-  "timeouts": null,
-  "flowId": "c4aaa38fdc5a4f0e9afc89943836bfc2",
-  "companyId": "86b31af0-245f-4cdd-967d-f790f55edc84",
-  "versionId": 30,
+  "createdDate": 1655147185818,
+  "updatedDate": 1655147185823,
+  "flowId": "06489dcf96c86ff5f112d8f7c8fa1c48",
+  "companyId": "10e1501e-b379-4788-9bb0-5393953a4713",
+  "versionId": 65,
   "graphData": {
     "elements": {
       "nodes": [
@@ -44,8 +26,8 @@
             }
           },
           "position": {
-            "x": 1919.4376828584795,
-            "y": 338.7242969750258
+            "x": 1740,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -92,8 +74,8 @@
             }
           },
           "position": {
-            "x": 1057.4232379703064,
-            "y": 323.4316458837774
+            "x": 990,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -115,8 +97,8 @@
             }
           },
           "position": {
-            "x": 1160.810409533764,
-            "y": 323.4316458837774
+            "x": 1110,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -151,8 +133,8 @@
             }
           },
           "position": {
-            "x": 1778.3025591188855,
-            "y": 338.7242969750258
+            "x": 1620,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -187,8 +169,8 @@
             }
           },
           "position": {
-            "x": 2173.480905589749,
-            "y": 536.3134702104576
+            "x": 1950,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -223,8 +205,8 @@
             }
           },
           "position": {
-            "x": 1470.9719242241363,
-            "y": 530.2059890106923
+            "x": 1320,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -241,8 +223,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 798.9553090616628,
-            "y": 323.4316458837774
+            "x": 810,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -291,8 +273,8 @@
             }
           },
           "position": {
-            "x": 1467.8052868917785,
-            "y": 338.7242969750258
+            "x": 1320,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -309,8 +291,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1574.359095787594,
-            "y": 323.4316458837774
+            "x": 1440,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -340,16 +322,9 @@
                 "value": [
                   {
                     "name": "populationId",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"9451fe36-b05f-46c2-ad4d-d36c8a526771\"\n      }\n    ]\n  }\n]",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
                     "key": 0.7679110133136258,
                     "label": "populationId (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "agreementId",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"e0bf0c40-2f3e-465d-b071-528709067615\"\n      }\n    ]\n  }\n]",
-                    "key": 0.7151854805277726,
-                    "label": "agreementId (string - flowInstance)",
                     "type": "string"
                   }
                 ]
@@ -357,8 +332,8 @@
             }
           },
           "position": {
-            "x": 336.344093826993,
-            "y": 327.81674055192565
+            "x": 330,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -375,8 +350,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 440.9006239686234,
-            "y": 327.81674055192565
+            "x": 450,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -400,7 +375,7 @@
             "type": "action",
             "properties": {
               "connectionId": {
-                "value": "LBJi4yoi3L2clTZBqpxcnCpLsVqgfjuX"
+                "value": "defaultUserPool"
               },
               "errorIfUserExists": {
                 "value": false
@@ -414,8 +389,8 @@
             }
           },
           "position": {
-            "x": 2709.7943758002066,
-            "y": 338.7242969750258
+            "x": 2550,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -456,8 +431,8 @@
             }
           },
           "position": {
-            "x": 3020.2916480273134,
-            "y": 338.7242969750258
+            "x": 2850,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -474,8 +449,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 2822.7024747918817,
-            "y": 338.7242969750258
+            "x": 2670,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -534,7 +509,7 @@
           },
           "position": {
             "x": 690,
-            "y": 330
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -566,7 +541,7 @@
           },
           "position": {
             "x": 214,
-            "y": 218
+            "y": 241.46215396636626
           },
           "group": "nodes",
           "removed": false,
@@ -591,14 +566,17 @@
                 "value": "#B5DFFF"
               },
               "annotation": {
-                "value": "Standard Registration Form"
+                "value": "Prompt for user's information"
+              },
+              "width": {
+                "value": 275
               }
             },
             "status": "configured"
           },
           "position": {
-            "x": 566.3341730438834,
-            "y": 220.04447432031992
+            "x": 570,
+            "y": 240
           },
           "group": "nodes",
           "removed": false,
@@ -623,14 +601,14 @@
                 "value": "#B5DFFF"
               },
               "annotation": {
-                "value": "Create New User in PingOne"
+                "value": "Create user in PingOne"
               }
             },
             "status": "configured"
           },
           "position": {
-            "x": 928.1892735159846,
-            "y": 220.04447432031992
+            "x": 870,
+            "y": 240
           },
           "group": "nodes",
           "removed": false,
@@ -652,17 +630,20 @@
             "type": "action",
             "properties": {
               "backgroundColor": {
-                "value": "#B5DFFF"
+                "value": "#4a90e2ff"
               },
               "annotation": {
-                "value": "Enter Verification Code"
+                "value": "Verify email ownership"
+              },
+              "width": {
+                "value": 540
               }
             },
             "status": "configured"
           },
           "position": {
-            "x": 1354.8971879001033,
-            "y": 225.81619798335055
+            "x": 1200,
+            "y": 210
           },
           "group": "nodes",
           "removed": false,
@@ -687,14 +668,14 @@
                 "value": "#B5DFFF"
               },
               "annotation": {
-                "value": "Error Page"
+                "value": "Error creating new user"
               }
             },
             "status": "configured"
           },
           "position": {
-            "x": 1367.584752660679,
-            "y": 426.8188174472349
+            "x": 1200,
+            "y": 420
           },
           "group": "nodes",
           "removed": false,
@@ -719,14 +700,14 @@
                 "value": "#B5DFFF"
               },
               "annotation": {
-                "value": "Validate Verification Code"
+                "value": "Check user-provided OTP"
               }
             },
             "status": "configured"
           },
           "position": {
-            "x": 1665.3944601272103,
-            "y": 197.58917323543173
+            "x": 1500,
+            "y": 240
           },
           "group": "nodes",
           "removed": false,
@@ -751,14 +732,14 @@
                 "value": "#B5DFFF"
               },
               "annotation": {
-                "value": "Create Shadow User"
+                "value": "Create shadow user"
               }
             },
             "status": "configured"
           },
           "position": {
-            "x": 2596.8862768085314,
-            "y": 197.58917323543173
+            "x": 2460,
+            "y": 240
           },
           "group": "nodes",
           "removed": false,
@@ -783,14 +764,14 @@
                 "value": "#B5DFFF"
               },
               "annotation": {
-                "value": "Error Page"
+                "value": "Error validating OTP"
               }
             },
             "status": "configured"
           },
           "position": {
-            "x": 2088.7998313459925,
-            "y": 451.6323959667011
+            "x": 1860,
+            "y": 420
           },
           "group": "nodes",
           "removed": false,
@@ -815,14 +796,14 @@
                 "value": "#B5DFFF"
               },
               "annotation": {
-                "value": "Mint Token"
+                "value": "Mint token"
               }
             },
             "status": "configured"
           },
           "position": {
-            "x": 2935.610573783557,
-            "y": 197.58917323543173
+            "x": 2760,
+            "y": 240
           },
           "group": "nodes",
           "removed": false,
@@ -837,9 +818,9 @@
           "data": {
             "id": "6r77b83i6s",
             "nodeType": "CONNECTION",
-            "connectionId": "83285cfead49e5c2a70e10dc53005d62",
+            "connectionId": "da5b70183907665d2c87596c66db9bbd",
             "connectorId": "pingOneMfaConnector",
-            "name": "Ping One Mfa [2022-05-03]",
+            "name": "Ping One Mfa",
             "label": "Ping One Mfa [2022-05-03]",
             "status": "configured",
             "capabilityName": "createDevice",
@@ -863,8 +844,8 @@
             }
           },
           "position": {
-            "x": 2371.0700788251806,
-            "y": 338.7242969750258
+            "x": 2220,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -879,9 +860,9 @@
           "data": {
             "id": "omghnpt8gt",
             "nodeType": "CONNECTION",
-            "connectionId": "83285cfead49e5c2a70e10dc53005d62",
+            "connectionId": "da5b70183907665d2c87596c66db9bbd",
             "connectorId": "pingOneMfaConnector",
-            "name": "Ping One Mfa [2022-05-03]",
+            "name": "Ping One Mfa",
             "label": "Ping One Mfa [2022-05-03]",
             "status": "configured",
             "capabilityName": "updateUserMFAEnabled",
@@ -896,8 +877,8 @@
             }
           },
           "position": {
-            "x": 2088.7998313459925,
-            "y": 338.7242969750258
+            "x": 1950,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -919,8 +900,8 @@
             }
           },
           "position": {
-            "x": 2201.7079303376677,
-            "y": 338.7242969750258
+            "x": 2070,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -942,8 +923,8 @@
             }
           },
           "position": {
-            "x": 2512.205202564775,
-            "y": 338.7242969750258
+            "x": 2340,
+            "y": 360
           },
           "group": "nodes",
           "removed": false,
@@ -970,13 +951,16 @@
                 "value": "#d0021bff"
               },
               "nodeTitle": {
-                "value": "Error Reading Agreement"
+                "value": "Error Enrolling MFA"
+              },
+              "errorMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.omghnpt8gt.payload.error.message}}\",\n        \"tooltip\": \"{{local.omghnpt8gt.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.6r77b83i6s.payload.error.message}}\",\n        \"tooltip\": \"{{local.6r77b83i6s.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               }
             }
           },
           "position": {
-            "x": 2879.1565242877195,
-            "y": 536.3134702104576
+            "x": 2550,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -1001,15 +985,15 @@
                 "value": "#B5DFFF"
               },
               "annotation": {
-                "value": "Error Page"
+                "value": "Error during enrollment"
               }
             },
             "status": "configured",
             "idUnique": "rj1c1gq4k2"
           },
           "position": {
-            "x": 2794.475450043963,
-            "y": 451.6323959667011
+            "x": 2430,
+            "y": 420
           },
           "group": "nodes",
           "removed": false,
@@ -1034,15 +1018,226 @@
                 "value": "#B5DFFF"
               },
               "annotation": {
-                "value": "MFA Email Enrollment"
+                "value": "Enable MFA for user"
               }
             },
             "status": "configured",
             "idUnique": "hfwlju74o9"
           },
           "position": {
-            "x": 2117.026856093911,
-            "y": 197.58917323543173
+            "x": 1860,
+            "y": 240
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "alp0n6q8n4",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotation": {
+                "value": "Prompt for OTP sent to email"
+              }
+            },
+            "status": "configured",
+            "idUnique": "er7b9k5o4p"
+          },
+          "position": {
+            "x": 1200,
+            "y": 240
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "br3sgkxggl",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4a90e2ff"
+              },
+              "annotation": {
+                "value": "Enroll email as MFA method"
+              },
+              "width": {
+                "value": 470
+              }
+            },
+            "status": "configured",
+            "idUnique": "rdivuso3p5"
+          },
+          "position": {
+            "x": 1860,
+            "y": 210
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "p55609uwtg",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4a90e2ff"
+              },
+              "annotation": {
+                "value": "Verify email ownership"
+              },
+              "width": {
+                "value": 530
+              }
+            },
+            "status": "configured",
+            "idUnique": "e6ngrzk5rx"
+          },
+          "position": {
+            "x": 570,
+            "y": 210
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tf90b17ctp",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4a90e2ff"
+              },
+              "annotation": {
+                "value": "Create record for userInfo endpoint and issue tokens"
+              },
+              "width": {
+                "value": 500
+              }
+            },
+            "status": "configured",
+            "idUnique": "1jc9fk5aah"
+          },
+          "position": {
+            "x": 2460,
+            "y": 210
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "pxpvoffjlu",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotation": {
+                "value": "Prerequisites: In order for this flow to work, you need to fill in the Population ID in the Set Variables node, and you need to enable email as an allowed MFA method in PingOneMFA Policies"
+              },
+              "width": {
+                "value": 300
+              },
+              "height": {
+                "value": 150
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 406.2350777645639
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "h2l3cn5odq",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotation": {
+                "value": "Add email 'device'"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 2130,
+            "y": 240
           },
           "group": "nodes",
           "removed": false,
@@ -1055,6 +1250,25 @@
         }
       ],
       "edges": [
+        {
+          "data": {
+            "id": "uhyxs442p5",
+            "source": "9g1rb2rxt5",
+            "target": "kotjm31vdk"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
         {
           "data": {
             "id": "c7zxoohfdb",
@@ -1415,25 +1629,6 @@
           "grabbable": true,
           "pannable": true,
           "classes": ""
-        },
-        {
-          "data": {
-            "id": "uhyxs442p5",
-            "source": "9g1rb2rxt5",
-            "target": "kotjm31vdk"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
         }
       ]
     },
@@ -1455,6 +1650,17 @@
     }
   },
   "inputSchema": null,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "cssLinks": [
+      "https://assets.pingone.com/ux/end-user/1.7.0/end-user.css"
+    ],
+    "useCustomCSS": true,
+    "debugMode": true,
+    "css": "body, .page {\n  background-color: #ededed !important;\n}\n\n.buttonLink {\n  background: none !important;\n  border: none;\n  cursor: pointer;\n  color: #2996cc;\n  font-size: 15px;\n}"
+  },
   "flowColor": "#E3F0FF",
   "connectorIds": [
     "pingOneSSOConnector",
@@ -1466,12 +1672,11 @@
     "annotationConnector",
     "pingOneMfaConnector"
   ],
-  "savedDate": 1651682385050,
+  "savedDate": 1655147185748,
   "variables": [
     {
       "visibility": "private",
       "type": "property",
-      "customerId": "37f4bb282ac304e1a96493e19d5ac27e",
       "fields": {
         "type": "string",
         "displayName": "",
@@ -1480,25 +1685,9 @@
         "max": 2000
       },
       "context": "flowInstance",
-      "createdDate": 1651608258700,
-      "name": "agreementId##SK##flowInstance",
-      "companyId": "86b31af0-245f-4cdd-967d-f790f55edc84"
-    },
-    {
-      "visibility": "private",
-      "type": "property",
-      "customerId": "37f4bb282ac304e1a96493e19d5ac27e",
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "context": "flowInstance",
-      "createdDate": 1651600772410,
+      "createdDate": 1651693398181,
       "name": "populationId##SK##flowInstance",
-      "companyId": "86b31af0-245f-4cdd-967d-f790f55edc84"
+      "companyId": "10e1501e-b379-4788-9bb0-5393953a4713"
     }
   ]
 }
