@@ -3,7 +3,7 @@
   "flowStatus": "enabled",
   "currentVersion": 75,
   "publishedVersion": 75,
-  "name": "Authentication Master - MFA",
+  "name": "Authentication Flow 2",
   "description": "User identifier first, password as the second step, and MFA as the third step.",
   "createdDate": 1651758580058,
   "updatedDate": 1651758580714,
