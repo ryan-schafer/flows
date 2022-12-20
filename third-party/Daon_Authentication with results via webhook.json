@@ -1,0 +1,1256 @@
+{
+  "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "httpConnector",
+    "daonConnector",
+    "challengeConnector",
+    "annotationConnector"
+  ],
+  "createdDate": 1671572686818,
+  "currentVersion": 29,
+  "customerId": "b23f4463beaa44cbd75e1d20a97bc369",
+  "deployedDate": 1671572691894,
+  "description": "Imported on Wed Nov 30 2022 23:38:43 GMT+0000 (Coordinated Universal Time)",
+  "flowStatus": "enabled",
+  "name": "Daon - Authentication with results via webhook",
+  "orx": "{\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"e95bf4b1f100f54375224643edd0177b\",\"flowVersionId\":29,\"version\":\"4.0.0\",\"states\":[\"initialize\",\"start_0\",\"inside_0\",\"inside_1\",\"inside_2\",\"inside_3_1_allTriggersTrue\",\"inside_4_2_allTriggersTrue\",\"end_0_1_allTriggersTrue\",\"end_1_1_allTriggersTrue\"],\"currentState\":[\"initialize\"],\"transitions\":[{\"from\":[\"initialize\"],\"to\":\"start_0\",\"conditions\":{\"$and\":[{\"initializeFlow\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"e95bf4b1f100f54375224643edd0177b\",\"flowVersionId\":29,\"id\":\"7mmr8ycpjk\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"bodyHeaderText\":{\"value\":\"Enter your Daon username\"},\"formFieldsList\":{\"value\":[{\"propertyName\":\"username\",\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"value\":\"\",\"hashedVisibility\":false,\"displayName\":\"Username\"},{\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"propertyName\":\"buttonValue\"}]},\"title\":{\"value\":\"Sign On\"},\"nodeTitle\":{\"value\":\"Sign On\"},\"nextButtonText\":{\"value\":\"Sign On\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                    class=\\\"align-self-center mb-5\\\"\\n                    src=\\\"{{global.variables.logoUrl}}\\\"\\n                    alt=\\\"{{global.variables.companyName}}\\\"\\n                    style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Sign On</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                Enter your Daon username.\\n                </p>\\n                <p\\n                    class=\\\"text-danger mdi mdi-alert-circle\\\"\\n                    data-id=\\\"feedback\\\"\\n                    data-skcomponent=\\\"skerror\\\"\\n                ></p>\\n                <form id=\\\"signOnForm\\\" data-id=\\\"signOnForm\\\">\\n                    <div class=\\\"mb-4 form-floating\\\">\\n                        <input\\n                            class=\\\"form-control\\\"\\n                            type=\\\"text\\\"\\n                            id=\\\"username\\\"\\n                            name=\\\"username\\\"\\n                            placeholder=\\\"Username\\\"\\n                            autocomplete=\\\"off\\\"\\n                            value=\\\"\\\"\\n                            data-id=\\\"username-input\\\"\\n                        /><label class=\\\"form-label\\\" for=\\\"username\\\"\\n                            >Username</label\\n                        >\\n                    </div>\\n                    <div class=\\\"d-flex flex-column mt-5\\\">\\n                        <button\\n                            data-id=\\\"button\\\"\\n                            type=\\\"submit\\\"\\n                            class=\\\"btn btn-primary mb-3\\\"\\n                            data-skcomponent=\\\"skbutton\\\"\\n                            data-skbuttontype=\\\"form-submit\\\"\\n                            data-skform=\\\"signOnForm\\\"\\n                            data-skbuttonvalue=\\\"submit\\\"\\n                        >\\n                            Sign on\\n                        </button>\\n                     \\n                        </button>\\n                    </div>\\n                </form>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"}},\"debugMode\":true,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":0,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"transitionId\":0},{\"from\":[\"start_0\"],\"to\":\"inside_0\",\"conditions\":{\"$and\":[{\"id\":\"7mmr8ycpjk\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"success\":true}]},\"signals\":[{\"name\":\"Daon [2022-11-30]\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"e95bf4b1f100f54375224643edd0177b\",\"flowVersionId\":29,\"id\":\"2ssukmoewz\",\"connectionId\":\"9c383024523c715a0b45d89e88bfe4b3\",\"connectorId\":\"daonConnector\",\"capabilityName\":\"getUserByUsername\",\"properties\":{\"userLogin\":{\"value\":\"{{local.7mmr8ycpjk.payload.output.username}}\"},\"nodeTitle\":{\"value\":\"Daon\"}},\"debugMode\":true,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"transitionId\":1,\"signalId\":0}],\"evalNodeId\":\"lkukrnipxf\",\"transitionId\":1},{\"from\":[\"inside_0\"],\"to\":\"inside_1\",\"conditions\":{\"$and\":[{\"id\":\"2ssukmoewz\",\"connectionId\":\"9c383024523c715a0b45d89e88bfe4b3\",\"connectorId\":\"daonConnector\",\"capabilityName\":\"getUserByUsername\",\"success\":true}]},\"signals\":[{\"name\":\"Challenge [2022-11-02]\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"e95bf4b1f100f54375224643edd0177b\",\"flowVersionId\":29,\"id\":\"53u8f5sozi\",\"connectionId\":\"b85e3bd831b89c0da15558b64ce64d22\",\"connectorId\":\"challengeConnector\",\"capabilityName\":\"createChallenge\",\"properties\":{\"challenge\":{\"value\":\"{{local.2kjtgxbf3g.payload.success}}\"},\"challengeStatus\":{\"value\":\"started\"},\"isChallengeComplete\":{\"value\":false}},\"debugMode\":true,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"transitionId\":2,\"signalId\":0}],\"evalNodeId\":\"nbtfukvofv\",\"transitionId\":2},{\"from\":[\"inside_1\"],\"to\":\"inside_2\",\"conditions\":{\"$and\":[{\"id\":\"53u8f5sozi\",\"connectionId\":\"b85e3bd831b89c0da15558b64ce64d22\",\"connectorId\":\"challengeConnector\",\"capabilityName\":\"createChallenge\",\"success\":true}]},\"signals\":[{\"name\":\"Daon [2022-11-30]\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"e95bf4b1f100f54375224643edd0177b\",\"flowVersionId\":29,\"id\":\"ofpnqzvhym\",\"connectionId\":\"9c383024523c715a0b45d89e88bfe4b3\",\"connectorId\":\"daonConnector\",\"capabilityName\":\"createAuthRequest\",\"properties\":{\"userId\":{\"value\":\"{{local.2ssukmoewz.payload.output.userId}}\"},\"description\":{\"value\":\"Authentication initiated by DaVinci\"},\"secureTextTransactionContent\":{\"value\":\"Are you sure you want to authenticate?\"},\"secureTransactionContentType\":{\"value\":\"text/plain\"},\"policyUrl\":{\"value\":\"https://api.identityx-cloud.com/pingdavinci/IdentityXServices/rest/v1/policies/QTAzCPHRfwCBXcI1Rm9-FiDR1g\"},\"pushNotificationType\":{\"value\":\"VERIFY_WITHOUT_CONFIRMATION\"},\"type\":{\"value\":\"FI\"},\"nodeTitle\":{\"value\":\"Daon\"}},\"debugMode\":true,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"transitionId\":3,\"signalId\":0}],\"evalNodeId\":\"9c6asbwgiz\",\"transitionId\":3},{\"from\":[\"inside_2\"],\"to\":\"inside_3_1_allTriggersTrue\",\"conditions\":{\"$and\":[{\"id\":\"ofpnqzvhym\",\"connectionId\":\"9c383024523c715a0b45d89e88bfe4b3\",\"connectorId\":\"daonConnector\",\"capabilityName\":\"createAuthRequest\",\"success\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"e95bf4b1f100f54375224643edd0177b\",\"flowVersionId\":29,\"id\":\"9yx44h4ik7\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"message\":{\"value\":\"Complete authentication on your mobile device.\"},\"challenge\":{\"value\":\"{{local.53u8f5sozi.payload.output.challenge}}\"},\"enablePolling\":{\"value\":true},\"messageTitle\":{\"value\":\"Check Your Device\"},\"nodeTitle\":{\"value\":\"Check Your Device\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"{{global.variables.logoUrl}}\\\"\\n                  alt=\\\"{{global.variables.companyName}}\\\"\\n                  style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Check Your Device</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                Complete authentication on your mobile device.\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"}},\"debugMode\":true,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":4,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"evalNodeId\":\"5rbc2t3pyp\",\"transitionId\":4},{\"from\":[\"inside_2\"],\"to\":\"inside_4_2_allTriggersTrue\",\"conditions\":{\"$and\":[{\"id\":\"ofpnqzvhym\",\"connectionId\":\"9c383024523c715a0b45d89e88bfe4b3\",\"connectorId\":\"daonConnector\",\"capabilityName\":\"createAuthRequest\",\"success\":true}]},\"signals\":[{\"name\":\"Daon [2022-11-30]\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"e95bf4b1f100f54375224643edd0177b\",\"flowVersionId\":29,\"id\":\"tv2asxc0tg\",\"connectionId\":\"9c383024523c715a0b45d89e88bfe4b3\",\"connectorId\":\"daonConnector\",\"capabilityName\":\"webhook\",\"properties\":{\"nodeTitle\":{\"value\":\"Daon\"}},\"debugMode\":true,\"logLevel\":3,\"isDisabled\":false,\"oeNoOp\":true,\"transitionId\":5,\"signalId\":0}],\"evalNodeId\":\"5rbc2t3pyp\",\"transitionId\":5},{\"from\":[\"inside_3_1_allTriggersTrue\"],\"to\":\"end_0_1_allTriggersTrue\",\"conditions\":{\"$and\":[{\"id\":\"9yx44h4ik7\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"success\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"e95bf4b1f100f54375224643edd0177b\",\"flowVersionId\":29,\"id\":\"xlf3nhq44y\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"message\":{\"value\":\"Authentication {{local.ofpnqzvhym.payload.output.status}}\"},\"messageTitle\":{\"value\":\"Result\"},\"nodeTitle\":{\"value\":\"Result\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"{{global.variables.logoUrl}}\\\"\\n                  alt=\\\"{{global.variables.companyName}}\\\"\\n                  style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Result</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                    Authentication {{local.ofpnqzvhym.payload.output.status}}\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\\n\\n\"}},\"debugMode\":true,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":6,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"evalNodeId\":\"rzzi3ry0wz\",\"transitionId\":6},{\"from\":[\"inside_4_2_allTriggersTrue\"],\"to\":\"end_1_1_allTriggersTrue\",\"conditions\":{\"$and\":[{\"id\":\"tv2asxc0tg\",\"connectionId\":\"9c383024523c715a0b45d89e88bfe4b3\",\"connectorId\":\"daonConnector\",\"capabilityName\":\"webhook\",\"success\":true}]},\"signals\":[{\"name\":\"Challenge [2022-11-02]\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"e95bf4b1f100f54375224643edd0177b\",\"flowVersionId\":29,\"id\":\"52f2lsqi8c\",\"connectionId\":\"b85e3bd831b89c0da15558b64ce64d22\",\"connectorId\":\"challengeConnector\",\"capabilityName\":\"updateChallenge\",\"properties\":{\"challenge\":{\"value\":\"{{local.53u8f5sozi.payload.output.challenge}}\"},\"challengeStatus\":{\"value\":\"approved\"},\"isChallengeComplete\":{\"value\":true}},\"debugMode\":true,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"transitionId\":7,\"signalId\":0}],\"evalNodeId\":\"ciu16ol9zk\",\"transitionId\":7}],\"history\":[],\"outputs\":{\"httpConnector_customHTMLTemplate\":{\"localOutputs\":[\"output\"]},\"daonConnector_getUserByUsername\":{\"localOutputs\":[\"output\"]},\"challengeConnector_createChallenge\":{\"localOutputs\":[\"output\"]},\"daonConnector_createAuthRequest\":{\"localOutputs\":[\"output\"]},\"daonConnector_webhook\":{\"localOutputs\":[\"output\"]}},\"outputParameters\":[\"global.variables.logoUrl\",\"global.variables.companyName\",\"global.variables.logoStyle\",\"local.7mmr8ycpjk.payload.output.username\",\"local.2ssukmoewz.payload.output.userId\",\"local.53u8f5sozi.payload.output.challenge\",\"local.2kjtgxbf3g.payload.success\",\"local.ofpnqzvhym.payload.output.status\"],\"global\":{},\"local\":{},\"idMapping\":{},\"nodeMappingForTids\":{\"7mmr8ycpjk\":\"initialize\",\"7mmr8ycpjk_customHTMLTemplate\":\"initialize\",\"9yx44h4ik7\":\"7mmr8ycpjk\",\"9yx44h4ik7_customHTMLTemplate\":\"7mmr8ycpjk_customHTMLTemplate\",\"xlf3nhq44y\":\"9yx44h4ik7\",\"xlf3nhq44y_customHTMLTemplate\":\"9yx44h4ik7_customHTMLTemplate\"},\"tids\":{},\"delayedConditionalStateChangeMappings\":{},\"delayedConditionalStateChangeMappingsReverse\":{},\"delayedConditionalStatesList\":[],\"lbsTransitionIdsToIgnore\":[],\"lbsTransitionIdsMapping\":{},\"outputParametersDefault\":{\"global.variables.logoUrl\":\"\",\"global.variables.companyName\":\"\",\"global.variables.logoStyle\":\"\",\"local.7mmr8ycpjk.payload.output.username\":\"\",\"local.2ssukmoewz.payload.output.userId\":\"\",\"local.53u8f5sozi.payload.output.challenge\":\"\",\"local.2kjtgxbf3g.payload.success\":\"\",\"local.ofpnqzvhym.payload.output.status\":\"\"},\"outputParametersDefaultBlacklist\":[],\"historyThreshold\":70,\"errorRewindBlackListIds\":[],\"nodeMappingForTidsNew\":{\"7mmr8ycpjk\":\"initialize\",\"9yx44h4ik7\":[\"7mmr8ycpjk\"],\"xlf3nhq44y\":[\"7mmr8ycpjk\",\"9yx44h4ik7\"]},\"nodeStates\":{\"7mmr8ycpjk\":\"start_0\",\"2ssukmoewz\":\"inside_0\",\"53u8f5sozi\":\"inside_1\",\"ofpnqzvhym\":\"inside_2\",\"9yx44h4ik7\":\"inside_3_1_allTriggersTrue\",\"tv2asxc0tg\":\"inside_4_2_allTriggersTrue\",\"xlf3nhq44y\":\"end_0_1_allTriggersTrue\",\"52f2lsqi8c\":\"end_1_1_allTriggersTrue\"}}",
+  "publishedVersion": 29,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "logLevel": 3,
+    "debugMode": true,
+    "useCustomCSS": true,
+    "cssLinks": [
+      "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
+      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.4/icons.css"
+    ]
+  },
+  "updatedDate": 1671572691895,
+  "flowId": "e95bf4b1f100f54375224643edd0177b",
+  "versionId": 29,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "7mmr8ycpjk",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http device id input",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "bodyHeaderText": {
+                "value": "Enter your Daon username"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "propertyName": "username",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "hashedVisibility": false,
+                    "displayName": "Username"
+                  },
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "title": {
+                "value": "Sign On"
+              },
+              "nodeTitle": {
+                "value": "Sign On"
+              },
+              "nextButtonText": {
+                "value": "Sign On"
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                    class=\"align-self-center mb-5\"\n                    src=\"{{global.variables.logoUrl}}\"\n                    alt=\"{{global.variables.companyName}}\"\n                    style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Sign On</h1>\n                <p class=\"text-muted text-center\">\n                Enter your Daon username.\n                </p>\n                <p\n                    class=\"text-danger mdi mdi-alert-circle\"\n                    data-id=\"feedback\"\n                    data-skcomponent=\"skerror\"\n                ></p>\n                <form id=\"signOnForm\" data-id=\"signOnForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input\n                            class=\"form-control\"\n                            type=\"text\"\n                            id=\"username\"\n                            name=\"username\"\n                            placeholder=\"Username\"\n                            autocomplete=\"off\"\n                            value=\"\"\n                            data-id=\"username-input\"\n                        /><label class=\"form-label\" for=\"username\"\n                            >Username</label\n                        >\n                    </div>\n                    <div class=\"d-flex flex-column mt-5\">\n                        <button\n                            data-id=\"button\"\n                            type=\"submit\"\n                            class=\"btn btn-primary mb-3\"\n                            data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\"\n                            data-skform=\"signOnForm\"\n                            data-skbuttonvalue=\"submit\"\n                        >\n                            Sign on\n                        </button>\n                     \n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+              }
+            }
+          },
+          "position": {
+            "x": 403.45750000000004,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2ssukmoewz",
+            "nodeType": "CONNECTION",
+            "connectionId": "9c383024523c715a0b45d89e88bfe4b3",
+            "connectorId": "daonConnector",
+            "name": "Daon [2022-11-30]",
+            "label": "Daon IdentityX",
+            "status": "configured",
+            "capabilityName": "getUserByUsername",
+            "type": "trigger",
+            "properties": {
+              "userLogin": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.7mmr8ycpjk.payload.output.username}}\",\n        \"tooltip\": \"{{local.7mmr8ycpjk.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Daon"
+              }
+            }
+          },
+          "position": {
+            "x": 750.7962500000001,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lkukrnipxf",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 561.33875,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ofpnqzvhym",
+            "nodeType": "CONNECTION",
+            "connectionId": "9c383024523c715a0b45d89e88bfe4b3",
+            "connectorId": "daonConnector",
+            "name": "Daon [2022-11-30]",
+            "label": "Daon IdentityX",
+            "status": "configured",
+            "capabilityName": "createAuthRequest",
+            "type": "trigger",
+            "properties": {
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"singularkey.svg\",\n        \"url\": \"userId\",\n        \"data\": \"{{local.2ssukmoewz.payload.output.userId}}\",\n        \"tooltip\": \"{{local.2ssukmoewz.payload.output.userId}}\",\n        \"children\": [\n          {\n            \"text\": \"userId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "description": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Authentication initiated by DaVinci\"\n      }\n    ]\n  }\n]"
+              },
+              "secureTextTransactionContent": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Are you sure you want to authenticate?\"\n      }\n    ]\n  }\n]"
+              },
+              "secureTransactionContentType": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"text/plain\"\n      }\n    ]\n  }\n]"
+              },
+              "policyUrl": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://api.identityx-cloud.com/pingdavinci/IdentityXServices/rest/v1/policies/QTAzCPHRfwCBXcI1Rm9-FiDR1g\"\n      }\n    ]\n  }\n]"
+              },
+              "pushNotificationType": {
+                "value": "VERIFY_WITHOUT_CONFIRMATION"
+              },
+              "type": {
+                "value": "FI"
+              },
+              "nodeTitle": {
+                "value": "Daon"
+              }
+            }
+          },
+          "position": {
+            "x": 1445.47375,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5rbc2t3pyp",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "9yx44h4ik7": {
+                "value": "allTriggersTrue"
+              }
+            }
+          },
+          "position": {
+            "x": 1603.355,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9yx44h4ik7",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Complete authentication on your mobile device.\"\n      }\n    ]\n  }\n]"
+              },
+              "challenge": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"challenge.svg\",\n        \"url\": \"challenge\",\n        \"data\": \"{{local.53u8f5sozi.payload.output.challenge}}\",\n        \"tooltip\": \"{{local.53u8f5sozi.payload.output.challenge}}\",\n        \"children\": [\n          {\n            \"text\": \"challenge\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "enablePolling": {
+                "value": true
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Check Your Device\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Check Your Device"
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                  class=\"align-self-center mb-5\"\n                  src=\"{{global.variables.logoUrl}}\"\n                  alt=\"{{global.variables.companyName}}\"\n                  style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Check Your Device</h1>\n                <p class=\"text-muted text-center\">\n                Complete authentication on your mobile device.\n                </p>\n            </div>\n        </div>\n    </div>\n</div>"
+              }
+            }
+          },
+          "position": {
+            "x": 1792.8125,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ciu16ol9zk",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "52f2lsqi8c": {
+                "value": "allTriggersTrue"
+              }
+            }
+          },
+          "position": {
+            "x": 1950.6937500000001,
+            "y": 624.49125
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "52f2lsqi8c",
+            "nodeType": "CONNECTION",
+            "connectionId": "b85e3bd831b89c0da15558b64ce64d22",
+            "connectorId": "challengeConnector",
+            "name": "Challenge [2022-11-02]",
+            "label": "Challenge",
+            "status": "configured",
+            "capabilityName": "updateChallenge",
+            "type": "action",
+            "properties": {
+              "challenge": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"challenge.svg\",\n        \"url\": \"challenge\",\n        \"data\": \"{{local.53u8f5sozi.payload.output.challenge}}\",\n        \"tooltip\": \"{{local.53u8f5sozi.payload.output.challenge}}\",\n        \"children\": [\n          {\n            \"text\": \"challenge\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "challengeStatus": {
+                "value": "approved"
+              },
+              "isChallengeComplete": {
+                "value": true
+              }
+            }
+          },
+          "position": {
+            "x": 2140.1512500000003,
+            "y": 624.49125
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "53u8f5sozi",
+            "nodeType": "CONNECTION",
+            "connectionId": "b85e3bd831b89c0da15558b64ce64d22",
+            "connectorId": "challengeConnector",
+            "name": "Challenge [2022-11-02]",
+            "label": "Challenge",
+            "status": "configured",
+            "capabilityName": "createChallenge",
+            "type": "action",
+            "properties": {
+              "challenge": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variables.svg\",\n        \"url\": \"success\",\n        \"data\": \"{{local.2kjtgxbf3g.payload.success}}\",\n        \"tooltip\": \"{{local.2kjtgxbf3g.payload.success}}\",\n        \"children\": [\n          {\n            \"text\": \"success\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "challengeStatus": {
+                "value": "started"
+              },
+              "isChallengeComplete": {
+                "value": false
+              }
+            }
+          },
+          "position": {
+            "x": 1098.135,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rzzi3ry0wz",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "xlf3nhq44y": {
+                "value": "allTriggersTrue"
+              }
+            }
+          },
+          "position": {
+            "x": 1950.6937500000001,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xlf3nhq44y",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Authentication \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:ofpnqzvhym\",\n        \"url\": \"status\",\n        \"data\": \"{{local.ofpnqzvhym.payload.output.status}}\",\n        \"tooltip\": \"{{local.ofpnqzvhym.payload.output.status}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.ofpnqzvhym.payload.output.status}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Result\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Result"
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                  class=\"align-self-center mb-5\"\n                  src=\"{{global.variables.logoUrl}}\"\n                  alt=\"{{global.variables.companyName}}\"\n                  style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Result</h1>\n                <p class=\"text-muted text-center\">\n                    Authentication {{local.ofpnqzvhym.payload.output.status}}\n                </p>\n            </div>\n        </div>\n    </div>\n</div>\n\n"
+              }
+            }
+          },
+          "position": {
+            "x": 2140.1512500000003,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "nbtfukvofv",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 908.6775,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9c6asbwgiz",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 1256.01625,
+            "y": 403.45750000000004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tv2asxc0tg",
+            "nodeType": "CONNECTION",
+            "connectionId": "9c383024523c715a0b45d89e88bfe4b3",
+            "connectorId": "daonConnector",
+            "name": "Daon [2022-11-30]",
+            "label": "AK - Daon",
+            "status": "configured",
+            "capabilityName": "webhook",
+            "type": "action",
+            "properties": {
+              "nodeTitle": {
+                "value": "Daon"
+              }
+            }
+          },
+          "position": {
+            "x": 1792.8125,
+            "y": 624.49125
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6w150e4504",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Get Username"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 308.72875,
+            "y": 277.15250000000003
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "blsihgo9vf",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotation": {
+                "value": "Get Daon user ID"
+              },
+              "width": {
+                "value": 180
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 656.0675000000001,
+            "y": 277.15250000000003
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "14v636rrx9",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Create challenge"
+              },
+              "width": {
+                "value": 180
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1003.40625,
+            "y": 277.15250000000003
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "wr7jkjzkrz",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotation": {
+                "value": "Initiate authentication"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 50
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1350.7450000000001,
+            "y": 277.15250000000003
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "jhgmouzh6g",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotation": {
+                "value": "Listen for result from Daon"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 50
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1698.08375,
+            "y": 498.18625000000003
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1yiel5eq03",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Update challenge"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 2045.4225000000001,
+            "y": 498.18625000000003
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "z1lxyuvx65",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Wait for challenge update"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "height": {
+                "value": 50
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1698.08375,
+            "y": 277.15250000000003
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lply85br4z",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Show result"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 2045.4225000000001,
+            "y": 277.15250000000003
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9yjlpo0mov",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "cornerRadius": {
+                "value": 20
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "Authenticate via webhook with Daon"
+              },
+              "width": {
+                "value": 2100
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ohqy88hmqh",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Daon - Authentication with results via webhook Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.0                                                                           Release Date: December 19, 2022                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010xT2IAI/daon-authentication-with-results-via-webhook"
+              },
+              "width": {
+                "value": 600
+              },
+              "height": {
+                "value": 240
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 3
+              },
+              "strokeColor": {
+                "value": "#d0021bff"
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "fontStyle": {
+                "value": "bold"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 340.305,
+            "y": 813.94875
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "adfioizw4b",
+            "source": "tv2asxc0tg",
+            "target": "ciu16ol9zk"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6buto1hb9u",
+            "source": "9yx44h4ik7",
+            "target": "rzzi3ry0wz"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "n54czwcjd3",
+            "source": "7mmr8ycpjk",
+            "target": "lkukrnipxf"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7wpondza4e",
+            "source": "nbtfukvofv",
+            "target": "53u8f5sozi"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8sl2tp86ds",
+            "source": "ofpnqzvhym",
+            "target": "5rbc2t3pyp"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "c8s7e0ih47",
+            "source": "lkukrnipxf",
+            "target": "2ssukmoewz"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "yx0imlsi4b",
+            "source": "rzzi3ry0wz",
+            "target": "xlf3nhq44y"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "scxvpl2pby",
+            "source": "53u8f5sozi",
+            "target": "9c6asbwgiz"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "a638xy9pdc",
+            "source": "ciu16ol9zk",
+            "target": "52f2lsqi8c"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "vvq1qqbcg5",
+            "source": "9c6asbwgiz",
+            "target": "ofpnqzvhym"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "quftsy0ny2",
+            "source": "5rbc2t3pyp",
+            "target": "9yx44h4ik7"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "g9fvikqtym",
+            "source": "5rbc2t3pyp",
+            "target": "tv2asxc0tg"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "48lvlc461y",
+            "source": "2ssukmoewz",
+            "target": "nbtfukvofv"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#AFD5FF",
+  "savedDate": 1671572686734,
+  "variables": [
+    {
+      "context": "flowInstance",
+      "createdDate": 1667832920919,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
+      },
+      "type": "property",
+      "updatedDate": 1667950505469,
+      "visibility": "private",
+      "name": "logoUrl##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1667404096868,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "companyName##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1667404096868,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "width: 65px; height: 65px;"
+      },
+      "type": "property",
+      "updatedDate": 1667950646585,
+      "visibility": "private",
+      "name": "logoStyle##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    }
+  ]
+}
