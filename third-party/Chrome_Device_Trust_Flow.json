@@ -1,0 +1,174 @@
+{
+  "companyId": "83735836-2cb5-49c3-a973-17dff4550bc3",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "connectorGoogleChromeEnterprise",
+    "httpConnector"
+  ],
+  "createdDate": 1694461962844,
+  "currentVersion": 4,
+  "customerId": "4e0b35f4610ab28141494b5413c08522",
+  "deployedDate": 1694461963936,
+  "description": "A test flow for verifying that the device trust for Chrome browser and PingOne's DaVinci is setup correctly. Please click on the Chrome Device Trust Node and hit the configure button to input your API Key, Client Email and Private Key to complete the test setup.",
+  "flowStatus": "enabled",
+  "isOutputSchemaSaved": false,
+  "name": "Chrome browser Device Trust Flow ",
+  "publishedVersion": 4,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "logLevel": 2
+  },
+  "timeouts": "null",
+  "updatedDate": 1694461963936,
+  "flowId": "24560ede0b9739241a393a65a4a2c01c",
+  "versionId": 4,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "42socw5b9n",
+            "nodeType": "CONNECTION",
+            "connectionId": "c74e275dc9000109761886e5183af647",
+            "connectorId": "connectorGoogleChromeEnterprise",
+            "name": "Google Chrome Device Trust",
+            "label": "Google Chrome Device Trust",
+            "status": "configured",
+            "capabilityName": "initializeAuthorizationRequest",
+            "type": "action",
+            "properties": {}
+          },
+          "position": {
+            "x": 571,
+            "y": 236
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "yn8ssp5qnp",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 734.5,
+            "y": 236
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "jr9vzod33r",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Device Signals\"\n      }\n    ]\n  }\n]"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"google-chrome.svg\",\n        \"url\": \"output\",\n        \"data\": \"{{local.42socw5b9n.payload.output}}\",\n        \"tooltip\": \"{{local.42socw5b9n.payload.output}}\",\n        \"children\": [\n          {\n            \"text\": \"output\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Display Device Signals"
+              }
+            }
+          },
+          "position": {
+            "x": 907,
+            "y": 236.5
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "cv8zyzltwm",
+            "source": "42socw5b9n",
+            "target": "yn8ssp5qnp"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "67w6dfy9oj",
+            "source": "yn8ssp5qnp",
+            "target": "jr9vzod33r"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#4C8BF5",
+  "savedDate": 1694461962815,
+  "variables": [],
+  "connections": []
+}
