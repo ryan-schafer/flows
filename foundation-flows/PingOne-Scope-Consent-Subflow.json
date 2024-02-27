@@ -8,9 +8,10 @@
     "annotationConnector",
     "variablesConnector"
   ],
-  "createdDate": 1701886157493,
-  "currentVersion": 43,
+  "createdDate": 1708725670996,
+  "currentVersion": 2,
   "customerId": "fbd98380ee4bb7f118c3787eae30ad7b",
+  "deployedDate": 1708725674921,
   "description": "",
   "flowStatus": "enabled",
   "inputSchemaCompiled": {
@@ -39,20 +40,18 @@
   "isInputSchemaSaved": true,
   "isOutputSchemaSaved": false,
   "name": "PingOne Scope Consent - Subflow",
-  "publishedVersion": 43,
+  "publishedVersion": 2,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": "",
     "intermediateLoadingScreenHTML": "",
-    "pingOneFlow": true
+    "pingOneFlow": false
   },
   "timeouts": "null",
-  "trigger": {
-    "type": "AUTHENTICATION"
-  },
-  "updatedDate": 1701981247102,
-  "flowId": "d29e77c8b0cec41e599635888af51514",
-  "versionId": 43,
+  "trigger": {},
+  "updatedDate": 1708725674922,
+  "flowId": "9832ad9d6fbdcccfd0c5caaee046248f",
+  "versionId": 2,
   "graphData": {
     "elements": {
       "nodes": [
@@ -96,7 +95,7 @@
                 }
               }
             },
-            "idUnique": "r2zwysls26",
+            "idUnique": "547hndi3vq",
             "type": "action"
           },
           "position": {
@@ -153,7 +152,7 @@
                 "value": "Return consent status and granted scopes"
               }
             },
-            "idUnique": "1yzziy3eeg",
+            "idUnique": "jq625p8x7u",
             "isDisabled": false
           },
           "position": {
@@ -200,7 +199,7 @@
                 "value": "Unexpected error"
               }
             },
-            "idUnique": "ni1gd3f7sc"
+            "idUnique": "5fxx4iwffo"
           },
           "position": {
             "x": 930,
@@ -224,7 +223,7 @@
                 "value": "anyTriggersFalse"
               }
             },
-            "idUnique": "x62xh3duxx"
+            "idUnique": "elr1grgwrt"
           },
           "position": {
             "x": 780,
@@ -244,7 +243,7 @@
             "id": "8pscuigwic",
             "nodeType": "EVAL",
             "label": "Evaluator",
-            "idUnique": "kg7tx8jg7i"
+            "idUnique": "yy77w4x26k"
           },
           "position": {
             "x": 784,
@@ -290,7 +289,7 @@
                 "value": "Did the user accepts the request"
               }
             },
-            "idUnique": "n2y36xknow"
+            "idUnique": "7f4u7ms7j6"
           },
           "position": {
             "x": 934,
@@ -309,7 +308,7 @@
           "data": {
             "id": "rosy8e83pt",
             "nodeType": "EVAL",
-            "idUnique": "m5vs0pl4v8"
+            "idUnique": "bzlgsns2in"
           },
           "position": {
             "x": 1084,
@@ -355,7 +354,7 @@
                 "value": "User declined request"
               }
             },
-            "idUnique": "t4yhon184q"
+            "idUnique": "9w6x359oh8"
           },
           "position": {
             "x": 1230,
@@ -374,7 +373,7 @@
           "data": {
             "id": "hwn969ylsm",
             "nodeType": "EVAL",
-            "idUnique": "fyieenqcm2"
+            "idUnique": "xxdy434u94"
           },
           "position": {
             "x": 1080,
@@ -431,7 +430,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "qkjien3812"
+            "idUnique": "l7jeu1nwps"
           },
           "position": {
             "x": 1080,
@@ -488,7 +487,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "4f5elkdvw8"
+            "idUnique": "e9uebua0zw"
           },
           "position": {
             "x": 1080,
@@ -539,7 +538,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "bmy9zdq4hh"
+            "idUnique": "fcoklfw4pl"
           },
           "position": {
             "x": 214,
@@ -584,7 +583,7 @@
                 "value": "Initialize common values used in the flow so that they're easier to update in one place"
               }
             },
-            "idUnique": "okhk9axcgl"
+            "idUnique": "28u8kl1qbs"
           },
           "position": {
             "x": 334,
@@ -603,7 +602,7 @@
           "data": {
             "id": "hedvisk4pr",
             "nodeType": "EVAL",
-            "idUnique": "22iiic3mbl"
+            "idUnique": "hnlnp90q7t"
           },
           "position": {
             "x": 484,
@@ -660,7 +659,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "ey0ke2m9ms"
+            "idUnique": "pr2qhjs6cm"
           },
           "position": {
             "x": 810,
@@ -711,7 +710,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "y76ed6ffox"
+            "idUnique": "mmswwjmf2i"
           },
           "position": {
             "x": 240,
@@ -762,7 +761,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "abjg1x5g5y"
+            "idUnique": "uexan7w4vr"
           },
           "position": {
             "x": 540,
@@ -1009,7 +1008,7 @@
     }
   ],
   "flowColor": "#ff661c",
-  "savedDate": 1701886157362,
+  "savedDate": 1708725670763,
   "variables": [
     {
       "context": "flowInstance",
