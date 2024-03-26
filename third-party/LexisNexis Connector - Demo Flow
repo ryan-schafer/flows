@@ -1,0 +1,3337 @@
+{
+  "companyId": "2eeb8364-271f-4f4f-8374-005e63d39768",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "screenConnector",
+    "functionsConnector",
+    "nodeConnector",
+    "errorConnector",
+    "lexisnexisV2Connector",
+    "httpConnector",
+    "variablesConnector",
+    "annotationConnector"
+  ],
+  "createdDate": 1711402442693,
+  "currentVersion": 12,
+  "customerId": "0db19c824f4c50eb63ab976e27aec705",
+  "deployedDate": 1711402446121,
+  "description": "This demo flow allows you to try the LexisNexis connector. It provides an example configuration and shows how to use the connector to branch your flow.",
+  "flowStatus": "enabled",
+  "isOutputSchemaSaved": false,
+  "name": "LexisNexis Connector - Demo Flow",
+  "publishedVersion": 12,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "useCustomCSS": true,
+    "css": ".reactSingularKey_hftFormContainer div {\n    margin-left: 20px;\n    margin-right: 20px;\n}"
+  },
+  "timeouts": "null",
+  "updatedDate": 1711402446124,
+  "flowId": "181147edac8cfe5abbd64957397d914b",
+  "versionId": 12,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "mrm2oxkkn1",
+            "nodeType": "CONNECTION",
+            "connectionId": "94abc50e304f1116c367dc57d535130b",
+            "connectorId": "screenConnector",
+            "name": "Screen",
+            "label": "Screen",
+            "status": "configured",
+            "capabilityName": "createView",
+            "type": "trigger",
+            "properties": {
+              "screen0Config": {
+                "properties": {
+                  "screenComponentList": {
+                    "value": [
+                      {
+                        "propertyName": "flowIntro",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"This flow allows you to try the LexisNexis connector. It provides an example configuration and shows how to use the connector to branch your flow.\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "alignment": "left",
+                          "variant": "body"
+                        }
+                      },
+                      {
+                        "propertyName": "querySelectPrompt",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"To start, select a LexisNexis query type:\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "alignment": "left",
+                          "variant": "subTitle",
+                          "color": "#4a4a4aff"
+                        }
+                      },
+                      {
+                        "propertyName": "attributeQueryInfo",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \" • Attribute query gets a risk assessment based on the user information you enter and branches to an OTP prompt, InstantID Q&A prompt, or a rejection, depending on the user's review status.\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "alignment": "left",
+                          "variant": "body"
+                        }
+                      },
+                      {
+                        "propertyName": "sessionQueryInfo",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \" • Session query gets a risk assessment based on your device profile (not compatible with Firefox or ad blockers).\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "alignment": "left",
+                          "variant": "body"
+                        }
+                      },
+                      {
+                        "propertyName": "queryType",
+                        "preferredControlType": "dropdown",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "displayName": "Select Query Type",
+                          "options": [
+                            "Attribute Query",
+                            "Session Query"
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "viewPaddingRight": {
+                    "value": "50"
+                  },
+                  "viewPaddingLeft": {
+                    "value": "50"
+                  },
+                  "showPoweredBy": {
+                    "value": true
+                  },
+                  "navTitle": {
+                    "value": "LexisNexis Example Flow"
+                  }
+                }
+              },
+              "nodeTitle": {
+                "value": "Select a query type"
+              },
+              "nodeDescription": {}
+            }
+          },
+          "position": {
+            "x": 304,
+            "y": 334
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7ka9rv9lfh",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 424,
+            "y": 334
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "v5te56t29q",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "idUnique": "n81lb5gd2s",
+            "capabilityName": "AEqualsMultipleB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"screen.svg\",\n        \"url\": \"queryType\",\n        \"data\": \"{{local.mrm2oxkkn1.payload.output.queryType}}\",\n        \"tooltip\": \"{{local.mrm2oxkkn1.payload.output.queryType}}\",\n        \"children\": [\n          {\n            \"text\": \"queryType\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Session Query\"\n      }\n    ]\n  }\n]",
+                    "id": "muug6uvd1a"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Attribute Query\"\n      }\n    ]\n  }\n]",
+                    "id": "2e685npbhx"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 604,
+            "y": 334
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "x87vtpp84e",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 814,
+            "y": 424
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "nn0f8vu0tf",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "hta0jihsj0"
+              }
+            }
+          },
+          "position": {
+            "x": 994,
+            "y": 424
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hta0jihsj0",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Attribute Query"
+              }
+            }
+          },
+          "position": {
+            "x": 281,
+            "y": 1118
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "utxp3ayt8q",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 814,
+            "y": 514
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ndsmopomma",
+            "nodeType": "CONNECTION",
+            "connectionId": "6d8f6f706c45fd459a86b3f092602544",
+            "connectorId": "errorConnector",
+            "name": "Error Customize",
+            "label": "Error Message",
+            "status": "configured",
+            "capabilityName": "customErrorMessage",
+            "type": "action",
+            "properties": {
+              "errorMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Unknown Profiling Type\"\n      }\n    ]\n  }\n]"
+              },
+              "errorDescription": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Unknown Query Type Selected!\"\n      },\n      {\n        \"text\": \" \"\n      }\n    ]\n  }\n]"
+              }
+            }
+          },
+          "position": {
+            "x": 994,
+            "y": 514
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "25dogje9ym",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 371,
+            "y": 1118
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "gwdneni986",
+            "nodeType": "CONNECTION",
+            "connectionId": "94abc50e304f1116c367dc57d535130b",
+            "connectorId": "screenConnector",
+            "name": "Screen",
+            "label": "Screen",
+            "status": "configured",
+            "capabilityName": "createView",
+            "type": "trigger",
+            "properties": {
+              "screen0Config": {
+                "properties": {
+                  "screenComponentList": {
+                    "value": [
+                      {
+                        "propertyName": "attributeQueryIntro1",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"To try branching your flow based on risk result, you can set your LexisNexis policy to apply specific review statuses to different user accounts (\\\"Username\\\" below).\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "alignment": "left",
+                          "variant": "body"
+                        }
+                      },
+                      {
+                        "propertyName": "attributeQueryIntro2",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \" • Users with a review status of \\\"trusted\\\" are\"\n      },\n      {\n        \"text\": \" shown an OTP prompt, which uses the email and phone number information you enter here.\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "variant": "body",
+                          "alignment": "left"
+                        }
+                      },
+                      {
+                        "propertyName": "attributeQueryIntro3",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \" • Users with a review status of \"\n      },\n      {\n        \"text\": \"\\\"neutral\\\" are shown an InstantID Q&A prompt. Note: In test environments, you can select the \\\"None of the above\\\" answers to continue.\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "alignment": "left",
+                          "variant": "body"
+                        }
+                      },
+                      {
+                        "propertyName": "attributeQueryIntro4",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \" • Users with a review status of \\\"high\\\" are rejected and shown an error message.\"\n      }\n    ]\n  }\n]",
+                        "attributes": {}
+                      },
+                      {
+                        "propertyName": "attributeQueryPrompt",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter the test user information:\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "variant": "subTitle",
+                          "alignment": "left"
+                        }
+                      },
+                      {
+                        "propertyName": "AccountName",
+                        "preferredControlType": "textField",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"myReviewUser\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "displayName": "Username"
+                        }
+                      },
+                      {
+                        "propertyName": "AccountFirstName",
+                        "preferredControlType": "textField",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"John\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "displayName": "FIRST NAME"
+                        }
+                      },
+                      {
+                        "propertyName": "AccountLastName",
+                        "preferredControlType": "textField",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Smith\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "displayName": "LAST NAME"
+                        }
+                      },
+                      {
+                        "propertyName": "Email",
+                        "preferredControlType": "textField",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"your@email.com\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "displayName": "OTP EMAIL"
+                        }
+                      },
+                      {
+                        "propertyName": "PhoneNumber",
+                        "preferredControlType": "textField",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"15551234567\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "displayName": "OTP PHONE NUMBER"
+                        }
+                      }
+                    ]
+                  },
+                  "showPoweredBy": {
+                    "value": true
+                  },
+                  "navTitle": {
+                    "value": "LexisNexis Attribute Query"
+                  }
+                }
+              },
+              "nodeTitle": {
+                "value": "Capture User Attributes"
+              }
+            }
+          },
+          "position": {
+            "x": 551,
+            "y": 1118
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "nwk1kyo3e1",
+            "nodeType": "CONNECTION",
+            "connectionId": "51db7ca415350876410d0ad19f2ae737",
+            "connectorId": "lexisnexisV2Connector",
+            "name": "LexisNexis Connector",
+            "label": "LexisnexisV2",
+            "status": "configured",
+            "capabilityName": "ddp",
+            "type": "trigger",
+            "properties": {
+              "queryType": {
+                "value": "attribute"
+              },
+              "service_type": {
+                "value": "all"
+              },
+              "events_type": {
+                "value": "login"
+              },
+              "account_login": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"screen.svg\",\n        \"url\": \"AccountName\",\n        \"data\": \"{{local.gwdneni986.payload.output.AccountName}}\",\n        \"tooltip\": \"{{local.gwdneni986.payload.output.AccountName}}\",\n        \"children\": [\n          {\n            \"text\": \"AccountName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "policy": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"your-lexisnexis-policy-name\"\n      }\n    ]\n  }\n]"
+              },
+              "customAttribute": {
+                "value": [
+                  {
+                    "key": "account_first_name",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"screen.svg\",\n        \"url\": \"AccountName\",\n        \"data\": \"{{local.gwdneni986.payload.output.AccountName}}\",\n        \"tooltip\": \"{{local.gwdneni986.payload.output.AccountName}}\",\n        \"children\": [\n          {\n            \"text\": \"AccountName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 821,
+            "y": 1118
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "75ies0w68i",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "capabilityName": "AEqualsMultipleB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"LexisNexis_DDP_Review_Status\",\n        \"data\": \"{{global.variables.LexisNexis_DDP_Review_Status}}\",\n        \"tooltip\": \"{{global.variables.LexisNexis_DDP_Review_Status}}\",\n        \"children\": [\n          {\n            \"text\": \"LexisNexis_DDP_Review_Status\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"pass\"\n      }\n    ]\n  }\n]",
+                    "id": "qlq974su5a"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"review\"\n      }\n    ]\n  }\n]",
+                    "id": "fgp5vejw00"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"reject\"\n      }\n    ]\n  }\n]",
+                    "id": "ul3vxyurll"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Risk Evaluation"
+              },
+              "nodeDescription": {
+                "value": "Branch based on risk rating"
+              }
+            }
+          },
+          "position": {
+            "x": 581,
+            "y": 1478
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1lmt9vqqiq",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "OTP"
+              }
+            }
+          },
+          "position": {
+            "x": 281,
+            "y": 2018
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "waciftxky7",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 761,
+            "y": 1478
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ojvp2y3iik",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "1lmt9vqqiq"
+              }
+            }
+          },
+          "position": {
+            "x": 941,
+            "y": 1478
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cwu9p4bcue",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "InstantID Q&A"
+              }
+            },
+            "idUnique": "uykbu3igna"
+          },
+          "position": {
+            "x": 281,
+            "y": 2378
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5w71so9eox",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 761,
+            "y": 1568
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ppb487u5ys",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "cwu9p4bcue"
+              }
+            }
+          },
+          "position": {
+            "x": 941,
+            "y": 1568
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ujj1ca39wg",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 761,
+            "y": 1658
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7y5c5xz4xj",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 761,
+            "y": 1778
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "a30invyq94",
+            "nodeType": "CONNECTION",
+            "connectionId": "6d8f6f706c45fd459a86b3f092602544",
+            "connectorId": "errorConnector",
+            "name": "Error Customize",
+            "label": "Error Message",
+            "status": "configured",
+            "capabilityName": "customErrorMessage",
+            "type": "action",
+            "properties": {
+              "errorMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Unknown Risk Type\"\n      }\n    ]\n  }\n]"
+              },
+              "errorDescription": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"An invalid review status was returned.\"\n      }\n    ]\n  }\n]"
+              },
+              "errorCode": {
+                "value": "400"
+              },
+              "errorReason": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"LexisNexis reported the following reason code for the risk evlauation: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"reason_code\",\n        \"data\": \"{{local.nwk1kyo3e1.payload.output.rawResponse.policy_details_api.policy_detail_api[0].customer.rules[0].reason_code}}\",\n        \"tooltip\": \"{{local.nwk1kyo3e1.payload.output.rawResponse.policy_details_api.policy_detail_api[0].customer.rules[0].reason_code}}\",\n        \"children\": [\n          {\n            \"text\": \"\"\n          }\n        ]\n      }\n    ]\n  }\n]"
+              }
+            }
+          },
+          "position": {
+            "x": 941,
+            "y": 1778
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "pvk4dtq1xp",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 401,
+            "y": 2018
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "fw6g9hhz8m",
+            "nodeType": "CONNECTION",
+            "connectionId": "94abc50e304f1116c367dc57d535130b",
+            "connectorId": "screenConnector",
+            "name": "Screen",
+            "label": "Screen",
+            "status": "configured",
+            "capabilityName": "createView",
+            "type": "trigger",
+            "properties": {
+              "screen0Config": {
+                "properties": {
+                  "screenComponentList": {
+                    "value": [
+                      {
+                        "propertyName": "screenLabel",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Select the OTP type\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "color": "#2b81e2ff",
+                          "alignment": "center",
+                          "variant": "title"
+                        }
+                      },
+                      {
+                        "propertyName": "otpType",
+                        "preferredControlType": "dropdown",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "displayName": "Select Your OTP Device",
+                          "options": [
+                            "email",
+                            "sms",
+                            "voice"
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "showPoweredBy": {
+                    "value": true
+                  }
+                }
+              },
+              "nodeTitle": {
+                "value": "Capture OTP Option"
+              }
+            }
+          },
+          "position": {
+            "x": 581,
+            "y": 2018
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "knvx7fq41k",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 701,
+            "y": 2018
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5i3fhlpicn",
+            "nodeType": "CONNECTION",
+            "connectionId": "51db7ca415350876410d0ad19f2ae737",
+            "connectorId": "lexisnexisV2Connector",
+            "name": "LexisNexis Connector",
+            "label": "LexisnexisV2",
+            "status": "configured",
+            "capabilityName": "otp",
+            "type": "trigger",
+            "properties": {
+              "policy": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"otp\"\n      }\n    ]\n  }\n]"
+              },
+              "deliveryMethod": {
+                "value": "dynamicDeliveryMethod"
+              },
+              "customDeliveryMethod": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"screen.svg\",\n        \"url\": \"otpType\",\n        \"data\": \"{{local.fw6g9hhz8m.payload.output.otpType}}\",\n        \"tooltip\": \"{{local.fw6g9hhz8m.payload.output.otpType}}\",\n        \"children\": [\n          {\n            \"text\": \"otpType\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "email": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"moustache\",\n        \"data\": \"{{local.gwdneni986.payload.output.Email}}\",\n        \"name\": \"Email\",\n        \"children\": [\n          {\n            \"text\": \"\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "phoneNumber": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"moustache\",\n        \"data\": \"{{local.gwdneni986.payload.output.PhoneNumber}}\",\n        \"name\": \"PhoneNumber\",\n        \"children\": [\n          {\n            \"text\": \"\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "emailTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your one-time passcode\"\n      }\n    ]\n  }\n]"
+              },
+              "emailBody": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"For your security, this passcode can only be used once and expires in ${ExpirePeriod} minutes. Do not give this code to anyone.${LineBreak}Your one-time passcode is:${LineBreak}${OTP}${LineBreak}If you did not make this request, contact your administrator.\"\n      }\n    ]\n  }\n]"
+              },
+              "smsMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"For your security, this passcode can only be used once and expires in ${ExpirePeriod} minutes. Do not give this code to anyone.${LineBreak}Your one-time passcode is:${LineBreak}${OTP}${LineBreak}If you did not make this request, contact your administrator.\"\n      }\n    ]\n  }\n]"
+              }
+            }
+          },
+          "position": {
+            "x": 851,
+            "y": 2018
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1rdi25gndy",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "pz12svrntu": {
+                "value": "allTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 971,
+            "y": 2018
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lcqlmq96ah",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"OTP Success\"\n      }\n    ]\n  }\n]"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Authentication successful! Thank you.\\n\\nYour review status was:\\n\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"LexisNexis_DDP_Review_Status\",\n        \"data\": \"{{global.variables.LexisNexis_DDP_Review_Status}}\",\n        \"tooltip\": \"{{global.variables.LexisNexis_DDP_Review_Status}}\",\n        \"children\": [\n          {\n            \"text\": \"LexisNexis_DDP_Review_Status\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "OTP Success"
+              }
+            }
+          },
+          "position": {
+            "x": 1121,
+            "y": 2018
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "pz12svrntu",
+            "nodeType": "CONNECTION",
+            "connectionId": "6d8f6f706c45fd459a86b3f092602544",
+            "connectorId": "errorConnector",
+            "name": "Error Customize",
+            "label": "Error Message",
+            "status": "configured",
+            "capabilityName": "customErrorMessage",
+            "type": "action",
+            "properties": {
+              "errorMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"An error occurred during OTP authentication.\"\n      }\n    ]\n  }\n]"
+              },
+              "errorDescription": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"error\",\n        \"data\": \"{{local.5i3fhlpicn.payload.error}}\",\n        \"tooltip\": \"{{local.5i3fhlpicn.payload.error}}\",\n        \"children\": [\n          {\n            \"text\": \"error\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "errorCode": {
+                "value": "500"
+              }
+            },
+            "idUnique": "550lx6norj"
+          },
+          "position": {
+            "x": 1121,
+            "y": 2138
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "klf1pxm9o4",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 401,
+            "y": 2378
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8q3h1hgfvz",
+            "nodeType": "CONNECTION",
+            "connectionId": "51db7ca415350876410d0ad19f2ae737",
+            "connectorId": "lexisnexisV2Connector",
+            "name": "LexisNexis Connector",
+            "label": "LexisnexisV2",
+            "status": "configured",
+            "capabilityName": "iidqa",
+            "type": "trigger",
+            "properties": {
+              "policy": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"iidqa\"\n      }\n    ]\n  }\n]"
+              },
+              "customAttribute": {
+                "value": [
+                  {
+                    "key": "account_first_name",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"John\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  {
+                    "key": "account_last_name",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"Pprivet\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 581,
+            "y": 2378
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0h4fpvn3zv",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"InstantID Q&A Successful\"\n      }\n    ]\n  }\n]"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"Authentication successful! Thank you.\\n\\nYour review status was:\\n\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"LexisNexis_DDP_Review_Status\",\n        \"data\": \"{{global.variables.LexisNexis_DDP_Review_Status}}\",\n        \"tooltip\": \"{{global.variables.LexisNexis_DDP_Review_Status}}\",\n        \"children\": [\n          {\n            \"text\": \"LexisNexis_DDP_Review_Status\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "IIDQ&A Success"
+              }
+            },
+            "idUnique": "5assr3dun8"
+          },
+          "position": {
+            "x": 971,
+            "y": 2378
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qvdpaq3pga",
+            "nodeType": "CONNECTION",
+            "connectionId": "6d8f6f706c45fd459a86b3f092602544",
+            "connectorId": "errorConnector",
+            "name": "Error Customize",
+            "label": "Error Message",
+            "status": "configured",
+            "capabilityName": "customErrorMessage",
+            "type": "action",
+            "properties": {
+              "errorMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"An error occurred during InstantID Q&A authentication.\"\n      }\n    ]\n  }\n]"
+              },
+              "errorDescription": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"error\",\n        \"data\": \"{{local.8q3h1hgfvz.payload.error}}\",\n        \"tooltip\": \"{{local.8q3h1hgfvz.payload.error}}\",\n        \"children\": [\n          {\n            \"text\": \"error\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "errorCode": {
+                "value": "500"
+              }
+            },
+            "idUnique": "8p9u3su70n"
+          },
+          "position": {
+            "x": 971,
+            "y": 2498
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "nbl1jswaz0",
+            "nodeType": "EVAL",
+            "properties": {
+              "qvdpaq3pga": {
+                "value": "allTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 731,
+            "y": 2378
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "w0xqfqinv1",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Risk Decision"
+              }
+            }
+          },
+          "position": {
+            "x": 281,
+            "y": 1478
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ir682wb11x",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 401,
+            "y": 1478
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "skv6p5wf5y",
+            "nodeType": "CONNECTION",
+            "connectionId": "06922a684039827499bdbdd97f49827b",
+            "connectorId": "variablesConnector",
+            "name": "Variables",
+            "label": "Variables",
+            "status": "configured",
+            "capabilityName": "saveValue",
+            "type": "trigger",
+            "properties": {
+              "saveVariables": {
+                "value": [
+                  {
+                    "name": "LexisNexis_DDP_Review_Status",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"review_status\",\n        \"data\": \"{{local.iymcxsfe2m.payload.output.rawResponse.policy_details_api.policy_detail_api[0].customer.review_status}}\",\n        \"tooltip\": \"{{local.iymcxsfe2m.payload.output.rawResponse.policy_details_api.policy_detail_api[0].customer.review_status}}\",\n        \"children\": [\n          {\n            \"text\": \"review_status\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.38594901680917615,
+                    "type": "string",
+                    "label": "LexisNexis_DDP_Review_Status (string - flowInstance)",
+                    "nameDefault": "review_status"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Save \"review status\" for later"
+              },
+              "nodeDescription": {
+                "value": "Set the \"risk\" variable using the review status"
+              }
+            },
+            "isDisabled": false
+          },
+          "position": {
+            "x": 1091,
+            "y": 758
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "bnljwq6yxm",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "q3cf0dgg2g": {
+                "value": "allTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 941,
+            "y": 1118
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "chwaffr70j",
+            "nodeType": "CONNECTION",
+            "connectionId": "06922a684039827499bdbdd97f49827b",
+            "connectorId": "variablesConnector",
+            "name": "Variables",
+            "label": "Variables",
+            "status": "configured",
+            "capabilityName": "saveValue",
+            "type": "trigger",
+            "properties": {
+              "saveVariables": {
+                "value": [
+                  {
+                    "name": "LexisNexis_DDP_Review_Status",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"review_status\",\n        \"data\": \"{{local.nwk1kyo3e1.payload.output.rawResponse.policy_details_api.policy_detail_api[0].customer.review_status}}\",\n        \"tooltip\": \"{{local.nwk1kyo3e1.payload.output.rawResponse.policy_details_api.policy_detail_api[0].customer.review_status}}\",\n        \"children\": [\n          {\n            \"text\": \"review_status\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.17849850544213064,
+                    "label": "LexisNexis_DDP_Review_Status (string - flowInstance)",
+                    "type": "string",
+                    "nameDefault": "review_status"
+                  }
+                ]
+              },
+              "nodeDescription": {
+                "value": "Set the \"risk\" variable using the review status"
+              },
+              "nodeTitle": {
+                "value": "Save \"review status\" for later"
+              }
+            }
+          },
+          "position": {
+            "x": 1091,
+            "y": 1118
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1r5kb64pp1",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 1211,
+            "y": 1118
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7bqp268i3v",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "w0xqfqinv1"
+              }
+            }
+          },
+          "position": {
+            "x": 1331,
+            "y": 1118
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "thqd67ltvj",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 1211,
+            "y": 758
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "27yshhcusb",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "w0xqfqinv1"
+              }
+            },
+            "isDisabled": false
+          },
+          "position": {
+            "x": 1331,
+            "y": 758
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "iyzs2f5q5d",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 814,
+            "y": 334
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "pwcu94yva5",
+            "nodeType": "CONNECTION",
+            "connectionId": "51db7ca415350876410d0ad19f2ae737",
+            "connectorId": "lexisnexisV2Connector",
+            "name": "LexisNexis Connector",
+            "label": "LexisnexisV2",
+            "status": "configured",
+            "capabilityName": "initialize",
+            "type": "action",
+            "properties": {
+              "ddpProfilingUrl": {
+                "value": "https://h.online-metrix.net/fp/tags.js"
+              },
+              "customProfilingUrl": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://h.online-metrix.net/fp/tags.js\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "isDisabled": false
+          },
+          "position": {
+            "x": 551,
+            "y": 758
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1yh4csmxsn",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "489tm7osbv"
+              }
+            }
+          },
+          "position": {
+            "x": 994,
+            "y": 334
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8fbl14mv2l",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 371,
+            "y": 758
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "489tm7osbv",
+            "nodeType": "CONNECTION",
+            "connectionId": "298fb09ad1df44517432de39325ea5b3",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Session Query"
+              }
+            },
+            "isDisabled": false
+          },
+          "position": {
+            "x": 281,
+            "y": 758
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ej5kthn6c9",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "0bkmz4rq1n": {
+                "value": "allTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 941,
+            "y": 758
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mox6esbhde",
+            "nodeType": "EVAL",
+            "properties": {
+              "wcf7vyn9re": {
+                "value": "allTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 671,
+            "y": 758
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "iymcxsfe2m",
+            "nodeType": "CONNECTION",
+            "connectionId": "51db7ca415350876410d0ad19f2ae737",
+            "connectorId": "lexisnexisV2Connector",
+            "name": "LexisNexis Connector",
+            "label": "LexisnexisV2",
+            "status": "configured",
+            "capabilityName": "ddp",
+            "type": "trigger",
+            "properties": {
+              "queryType": {
+                "value": "session"
+              },
+              "session_id": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"sessionId\",\n        \"data\": \"{{local.pwcu94yva5.payload.output.sessionId}}\",\n        \"tooltip\": \"{{local.pwcu94yva5.payload.output.sessionId}}\",\n        \"children\": [\n          {\n            \"text\": \"sessionId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "service_type": {
+                "value": "all"
+              },
+              "events_type": {
+                "value": "pre_authentication"
+              },
+              "policy": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"your-lexisnexis-policy-name\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "isDisabled": false
+          },
+          "position": {
+            "x": 821,
+            "y": 758
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mjzcxt8zab",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 671,
+            "y": 1118
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "v8vb15tqzy",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "annotation": {
+                "value": "Choose the LexisNexis query type (Session Query or Attribute Query)"
+              },
+              "cornerRadius": {
+                "value": 20
+              },
+              "width": {
+                "value": 1200
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "fontSize": {
+                "value": 16
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "wcf7vyn9re",
+            "nodeType": "CONNECTION",
+            "connectionId": "6d8f6f706c45fd459a86b3f092602544",
+            "connectorId": "errorConnector",
+            "name": "Error Customize",
+            "label": "Error Message",
+            "status": "configured",
+            "capabilityName": "customErrorMessage",
+            "type": "action",
+            "properties": {
+              "errorMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"An error occurred when profiling your device.\"\n      }\n    ]\n  }\n]"
+              },
+              "errorDescription": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"error\",\n        \"data\": \"{{local.pwcu94yva5.payload.error}}\",\n        \"tooltip\": \"{{local.pwcu94yva5.payload.error}}\",\n        \"children\": [\n          {\n            \"text\": \"error\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "errorCode": {
+                "value": "500"
+              }
+            }
+          },
+          "position": {
+            "x": 821,
+            "y": 878
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0bkmz4rq1n",
+            "nodeType": "CONNECTION",
+            "connectionId": "6d8f6f706c45fd459a86b3f092602544",
+            "connectorId": "errorConnector",
+            "name": "Error Customize",
+            "label": "Error Message",
+            "status": "configured",
+            "capabilityName": "customErrorMessage",
+            "type": "action",
+            "properties": {
+              "errorMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"An error occurred when querying the Dynamic Decision Platform.\"\n      }\n    ]\n  }\n]"
+              },
+              "errorDescription": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"error\",\n        \"data\": \"{{local.iymcxsfe2m.payload.error}}\",\n        \"tooltip\": \"{{local.iymcxsfe2m.payload.error}}\",\n        \"children\": [\n          {\n            \"text\": \"error\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "errorCode": {
+                "value": "500"
+              },
+              "errorReason": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.iymcxsfe2m.payload.error.message}}\",\n        \"tooltip\": \"{{local.iymcxsfe2m.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            }
+          },
+          "position": {
+            "x": 1091,
+            "y": 878
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "q3cf0dgg2g",
+            "nodeType": "CONNECTION",
+            "connectionId": "6d8f6f706c45fd459a86b3f092602544",
+            "connectorId": "errorConnector",
+            "name": "Error Customize",
+            "label": "Error Message",
+            "status": "configured",
+            "capabilityName": "customErrorMessage",
+            "type": "action",
+            "properties": {
+              "errorMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"An error occurred when querying the Dynamic Decision Platform.\"\n      }\n    ]\n  }\n]"
+              },
+              "errorDescription": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"error\",\n        \"data\": \"{{local.nwk1kyo3e1.payload.error}}\",\n        \"tooltip\": \"{{local.nwk1kyo3e1.payload.error}}\",\n        \"children\": [\n          {\n            \"text\": \"error\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "errorCode": {
+                "value": "500"
+              },
+              "errorReason": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.nwk1kyo3e1.payload.error.message}}\",\n        \"tooltip\": \"{{local.nwk1kyo3e1.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "je4ys65xiq"
+          },
+          "position": {
+            "x": 1091,
+            "y": 1238
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "q6tokp2r0v",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "annotation": {
+                "value": "Session query: Get a risk assessment based on the user's device profile"
+              },
+              "cornerRadius": {
+                "value": 30
+              },
+              "width": {
+                "value": 1200
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured",
+            "idUnique": "t19ehidm31"
+          },
+          "position": {
+            "x": 221,
+            "y": 638
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lrxvq2p1m4",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "annotation": {
+                "value": "Attribute query: Get a risk assessment based on the user's personal information"
+              },
+              "cornerRadius": {
+                "value": 30
+              },
+              "width": {
+                "value": 1200
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured",
+            "idUnique": "2bko146sep"
+          },
+          "position": {
+            "x": 221,
+            "y": 998
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ycpvr9rx4b",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "annotation": {
+                "value": "Based on the risk result, prompt the user with OTP or InstantID Q&A, or block access"
+              },
+              "cornerRadius": {
+                "value": 30
+              },
+              "width": {
+                "value": 1200
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured",
+            "idUnique": "egb1ptrtna"
+          },
+          "position": {
+            "x": 221,
+            "y": 1358
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7utu5ov3yl",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "annotation": {
+                "value": "OTP: Prompt the user to choose an OTP device and enter the passcode"
+              },
+              "cornerRadius": {
+                "value": 30
+              },
+              "width": {
+                "value": 1200
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured",
+            "idUnique": "1mhbsw7meb"
+          },
+          "position": {
+            "x": 221,
+            "y": 1898
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6l8408352m",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "annotation": {
+                "value": "InstantID Q&A: Prompt the user with personalized security questions"
+              },
+              "cornerRadius": {
+                "value": 30
+              },
+              "width": {
+                "value": 1200
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured",
+            "idUnique": "isp1686brt"
+          },
+          "position": {
+            "x": 221,
+            "y": 2258
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lat2spiiul",
+            "nodeType": "CONNECTION",
+            "connectionId": "6d8f6f706c45fd459a86b3f092602544",
+            "connectorId": "errorConnector",
+            "name": "Error Customize",
+            "label": "Error Message",
+            "status": "configured",
+            "capabilityName": "customErrorMessage",
+            "type": "action",
+            "properties": {
+              "errorMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Access Denied: Your account is flagged as high risk. Contact your administrator. Review status: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"LexisNexis_DDP_Review_Status\",\n        \"data\": \"{{global.variables.LexisNexis_DDP_Review_Status}}\",\n        \"tooltip\": \"{{global.variables.LexisNexis_DDP_Review_Status}}\",\n        \"children\": [\n          {\n            \"text\": \"LexisNexis_DDP_Review_Status\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "errorDescription": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your account has been identified as high risk. Contact your administrator for more information. Review status: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"LexisNexis_DDP_Review_Status\",\n        \"data\": \"{{global.variables.LexisNexis_DDP_Review_Status}}\",\n        \"tooltip\": \"{{global.variables.LexisNexis_DDP_Review_Status}}\",\n        \"children\": [\n          {\n            \"text\": \"LexisNexis_DDP_Review_Status\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "errorCode": {
+                "value": "403"
+              },
+              "errorReason": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"LexisNexis reported the following reason code for the risk evlauation: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"lexis-nexis.svg\",\n        \"url\": \"reason_code\",\n        \"data\": \"{{local.nwk1kyo3e1.payload.output.rawResponse.policy_details_api.policy_detail_api[0].customer.rules[0].reason_code}}\",\n        \"tooltip\": \"{{local.nwk1kyo3e1.payload.output.rawResponse.policy_details_api.policy_detail_api[0].customer.rules[0].reason_code}}\",\n        \"children\": [\n          {\n            \"text\": \"reason_code\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "n70rss3l2b"
+          },
+          "position": {
+            "x": 941,
+            "y": 1658
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "035aeyszhb",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e81920ff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "SET YOUR POLICY NAME"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "strokeEnabled": {
+                "value": false
+              },
+              "width": {
+                "value": 200
+              },
+              "height": {
+                "value": 20
+              },
+              "fontSize": {
+                "value": 15
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 731,
+            "y": 1028
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kft4hs07io",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e81920ff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "SET YOUR POLICY NAME"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "strokeEnabled": {
+                "value": false
+              },
+              "width": {
+                "value": 200
+              },
+              "height": {
+                "value": 20
+              },
+              "fontSize": {
+                "value": 15
+              }
+            },
+            "status": "configured",
+            "idUnique": "dy9745f2ai"
+          },
+          "position": {
+            "x": 731,
+            "y": 668
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "a0llb5bmzw",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e81920ff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Note: Before you start, complete your LexisNexis connector configuration and set your LexisNexis policy name in the two Dynamic Decision Policy (DDP) nodes below."
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "strokeEnabled": {
+                "value": false
+              },
+              "width": {
+                "value": 1200
+              },
+              "height": {
+                "value": 20
+              },
+              "fontSize": {
+                "value": 15
+              },
+              "cornerRadius": {
+                "value": 100
+              }
+            },
+            "status": "configured",
+            "idUnique": "umgvdeccqa"
+          },
+          "position": {
+            "x": 214,
+            "y": 244
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "psby5zghy1",
+            "source": "75ies0w68i",
+            "target": "waciftxky7",
+            "multiValueSourceId": "qlq974su5a"
+          },
+          "position": {
+            "x": 64,
+            "y": 52
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "81th0iwwi5",
+            "source": "ej5kthn6c9",
+            "target": "0bkmz4rq1n"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "pr74b8pl25",
+            "source": "mox6esbhde",
+            "target": "iymcxsfe2m"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2bqlprrl17",
+            "source": "75ies0w68i",
+            "target": "5w71so9eox",
+            "multiValueSourceId": "fgp5vejw00"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7862kljrru",
+            "source": "waciftxky7",
+            "target": "ojvp2y3iik"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lyxilmy0w9",
+            "source": "bnljwq6yxm",
+            "target": "q3cf0dgg2g"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ln0ju13tqb",
+            "source": "5w71so9eox",
+            "target": "ppb487u5ys"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "sh7zrrsbd8",
+            "source": "7y5c5xz4xj",
+            "target": "a30invyq94"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "iilxqlu09n",
+            "source": "gwdneni986",
+            "target": "mjzcxt8zab"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4m1o3i5xqu",
+            "source": "1lmt9vqqiq",
+            "target": "pvk4dtq1xp"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8a1ocopvi5",
+            "source": "pwcu94yva5",
+            "target": "mox6esbhde"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2kpj78rp0h",
+            "source": "75ies0w68i",
+            "target": "7y5c5xz4xj",
+            "multiValueSourceId": "-1"
+          },
+          "position": {
+            "x": 64,
+            "y": 172
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4p5utc45v7",
+            "source": "pvk4dtq1xp",
+            "target": "fw6g9hhz8m"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tx2ck5c4oy",
+            "source": "v5te56t29q",
+            "target": "iyzs2f5q5d",
+            "multiValueSourceId": "muug6uvd1a"
+          },
+          "position": {
+            "x": 64,
+            "y": 52
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ujw4ub7s7j",
+            "source": "1rdi25gndy",
+            "target": "lcqlmq96ah"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "nqrlvkyqb",
+            "source": "5i3fhlpicn",
+            "target": "1rdi25gndy"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mcb79gtvvs",
+            "source": "ej5kthn6c9",
+            "target": "skv6p5wf5y"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "bdr6cikir",
+            "source": "cwu9p4bcue",
+            "target": "klf1pxm9o4"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5tmjmjx5fr",
+            "source": "8fbl14mv2l",
+            "target": "pwcu94yva5"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "yx6pedkk70",
+            "source": "knvx7fq41k",
+            "target": "5i3fhlpicn"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kl0ifaej61",
+            "source": "klf1pxm9o4",
+            "target": "8q3h1hgfvz"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "auk1u70vsx",
+            "source": "w0xqfqinv1",
+            "target": "ir682wb11x"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2f2tibq0sp",
+            "source": "nbl1jswaz0",
+            "target": "0h4fpvn3zv"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "vylebynxts",
+            "source": "thqd67ltvj",
+            "target": "27yshhcusb"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "bt382qk9a7",
+            "source": "skv6p5wf5y",
+            "target": "thqd67ltvj"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "eorvlkubvl",
+            "source": "1rdi25gndy",
+            "target": "pz12svrntu"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mjojlj20ao",
+            "source": "489tm7osbv",
+            "target": "8fbl14mv2l"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "bgvr6ya6u9",
+            "source": "nwk1kyo3e1",
+            "target": "bnljwq6yxm"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2vqb8srspi",
+            "source": "bnljwq6yxm",
+            "target": "chwaffr70j"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "16nt71m19d",
+            "source": "1r5kb64pp1",
+            "target": "7bqp268i3v"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2gunl8p3ol",
+            "source": "nbl1jswaz0",
+            "target": "qvdpaq3pga"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "we45ezyl8b",
+            "source": "fw6g9hhz8m",
+            "target": "knvx7fq41k"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4smcoigzp5",
+            "source": "ujj1ca39wg",
+            "target": "lat2spiiul"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "nx835ce4ip",
+            "source": "8q3h1hgfvz",
+            "target": "nbl1jswaz0"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lr49d7nhb7",
+            "source": "v5te56t29q",
+            "target": "x87vtpp84e",
+            "multiValueSourceId": "2e685npbhx"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mfqddngb8s",
+            "source": "mrm2oxkkn1",
+            "target": "7ka9rv9lfh"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "e6fzw4jtq2",
+            "source": "7ka9rv9lfh",
+            "target": "v5te56t29q"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9yy5zwpst4",
+            "source": "ir682wb11x",
+            "target": "75ies0w68i"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4b1shu1ha2",
+            "source": "iyzs2f5q5d",
+            "target": "1yh4csmxsn"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cdw9acrpgs",
+            "source": "x87vtpp84e",
+            "target": "nn0f8vu0tf"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "q9wo0kc4lv",
+            "source": "v5te56t29q",
+            "target": "utxp3ayt8q",
+            "multiValueSourceId": "-1"
+          },
+          "position": {
+            "x": 64,
+            "y": 132
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2hpptqa62o",
+            "source": "utxp3ayt8q",
+            "target": "ndsmopomma"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "u1gosxypnh",
+            "source": "mjzcxt8zab",
+            "target": "nwk1kyo3e1"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5ympy2nnfm",
+            "source": "chwaffr70j",
+            "target": "1r5kb64pp1"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "g8vn81kxro",
+            "source": "hta0jihsj0",
+            "target": "25dogje9ym"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "d22lvgme8k",
+            "source": "25dogje9ym",
+            "target": "gwdneni986"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "v484xxbabr",
+            "source": "75ies0w68i",
+            "target": "ujj1ca39wg",
+            "multiValueSourceId": "ul3vxyurll"
+          },
+          "position": {
+            "x": 64,
+            "y": 132
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mxb8njf0oi",
+            "source": "iymcxsfe2m",
+            "target": "ej5kthn6c9"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mefigus1c7",
+            "source": "mox6esbhde",
+            "target": "wcf7vyn9re"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#58DFFF",
+  "savedDate": 1711402442626,
+  "variables": [
+    {
+      "context": "flowInstance",
+      "createdDate": 1711386938458,
+      "customerId": "0db19c824f4c50eb63ab976e27aec705",
+      "fields": {
+        "type": "string",
+        "displayName": "For flows that use the LexisNexis connector, this variable stores the user's review status, which is provided by the Dynamic Decision Platform (DDP) capability.",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "LexisNexis_DDP_Review_Status##SK##flowInstance",
+      "companyId": "2eeb8364-271f-4f4f-8374-005e63d39768"
+    }
+  ],
+  "connections": []
+}
