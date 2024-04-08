@@ -1,0 +1,1371 @@
+{
+  "companyId": "5493ac6e-6a9a-4c1a-b09b-49a37861b9e8",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "httpConnector",
+    "functionsConnector",
+    "flowConnector",
+    "annotationConnector"
+  ],
+  "createdDate": 1711710129927,
+  "currentVersion": 7,
+  "customerId": "5c8476128c169e879fd5d2bb0f19ca6a",
+  "deployedDate": 1711710133437,
+  "description": "Imported on Thu Dec 14 2023 08:33:46 GMT+0000 (Coordinated Universal Time)",
+  "flowStatus": "enabled",
+  "isOutputSchemaSaved": false,
+  "name": "CIAM Plus - User Profile Management - Main flow",
+  "publishedVersion": 7,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "useCustomCSS": true,
+    "cssLinks": [
+      "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.0/end-user-nano.css",
+      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.7/icons.css"
+    ],
+    "pingOneFlow": false,
+    "css": ".companyLogo {\n    /* Ping Logo  */\n    content: url(\"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\");\n    width: 65px;\n    height: 65px;\n}"
+  },
+  "timeouts": "null",
+  "trigger": {},
+  "updatedDate": 1711710799596,
+  "flowId": "eaa315be07a3be40406e49860c154155",
+  "versionId": 7,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "l02p45qsuj",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img class=\\\"align-self-center mb-5\\\" src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"ciam_logoUrl\",\n        \"data\": \"{{global.company.variables.ciam_logoUrl}}\",\n        \"tooltip\": \"{{global.company.variables.ciam_logoUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"ciam_logoUrl\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"ciam_companyName\",\n        \"data\": \"{{global.company.variables.ciam_companyName}}\",\n        \"tooltip\": \"{{global.company.variables.ciam_companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"ciam_companyName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" style=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"ciam_logoStyle\",\n        \"data\": \"{{global.company.variables.ciam_logoStyle}}\",\n        \"tooltip\": \"{{global.company.variables.ciam_logoStyle}}\",\n        \"children\": [\n          {\n            \"text\": \"ciam_logoStyle\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"></img>\\n                <h1 id=\\\"header\\\" class=\\\"text-center mb-4\\\">CIAM Plus Profile management</h1>\\n                <p>CIAM Plus Profile management flows will help you perform the following actions.</p>\\n                <p\\n                    class=\\\"text-danger mdi mdi-alert-circle\\\"\\n                    data-id=\\\"feedback\\\"\\n                    data-skcomponent=\\\"skerror\\\"\\n                ></p>\\n                <form id='profileManagementForm' data-id=\\\"profileManagementForm\\\">\\n                    <div class=\\\"d-flex flex-column\\\">\\n                        <button\\n                            data-id=\\\"profileUpdate-button\\\"\\n                            type=\\\"submit\\\"\\n                            data-skcomponent=\\\"skbutton\\\"\\n                            data-skbuttontype=\\\"form-submit\\\"\\n                            data-skform=\\\"profileManagementForm\\\"\\n                            data-skbuttonvalue=\\\"PROFILE UPDATE\\\"\\n                            class=\\\"btn btn-primary mb-3\\\"\\n                        >\\n                            Profile Update\\n                        </button>\\n                        <button\\n                            data-id=\\\"changePassword-button\\\"\\n                            type=\\\"submit\\\"\\n                            data-skcomponent=\\\"skbutton\\\"\\n                            data-skbuttontype=\\\"form-submit\\\"\\n                            data-skform=\\\"profileManagementForm\\\"\\n                            data-skbuttonvalue=\\\"CHANGE PASSWORD\\\"\\n                            class=\\\"btn btn-primary mb-3\\\"\\n                        >\\n                            Change Password\\n                        </button>\\n                        <button\\n                            data-id=\\\"tos-button\\\"\\n                            type=\\\"submit\\\"\\n                            data-skcomponent=\\\"skbutton\\\"\\n                            data-skbuttontype=\\\"form-submit\\\"\\n                            data-skform=\\\"profileManagementForm\\\"\\n                            data-skbuttonvalue=\\\"TERMS OF SERVICE\\\"\\n                            class=\\\"btn btn-primary mb-3\\\"\\n                        >\\n                            Terms of Service\\n                        </button>\\n                        <button\\n                            data-id=\\\"manageMfa-button\\\"\\n                            type=\\\"submit\\\"\\n                            data-skcomponent=\\\"skbutton\\\"\\n                            data-skbuttontype=\\\"form-submit\\\"\\n                            data-skform=\\\"profileManagementForm\\\"\\n                            data-skbuttonvalue=\\\"MANAGE MFA\\\"\\n                            class=\\\"btn btn-primary mb-3\\\"\\n                        >\\n                            Manage MFA Devices\\n                        </button>\\n                    </div>\\n                </form>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"\n      }\n    ]\n  }\n]"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Display profile management main flows"
+              }
+            }
+          },
+          "position": {
+            "x": 611,
+            "y": 360
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "le9zdwy6vr",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "capabilityName": "AEqualsMultipleB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.l02p45qsuj.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.l02p45qsuj.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"PROFILE UPDATE\"\n      }\n    ]\n  }\n]",
+                    "id": "izycvylmik"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CHANGE PASSWORD\"\n      }\n    ]\n  }\n]",
+                    "id": "9ozfxizjc8"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"TERMS OF SERVICE\"\n      }\n    ]\n  }\n]",
+                    "id": "qq446le76b"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"MANAGE MFA\"\n      }\n    ]\n  }\n]",
+                    "id": "gds6bwka9y"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Check User Action"
+              }
+            },
+            "idUnique": "4y5tr1ddm4"
+          },
+          "position": {
+            "x": 911,
+            "y": 360
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3yj120rjtd",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 761,
+            "y": 360
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "wd6f1e7218",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 1084,
+            "y": 424
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8v2a2cylz9",
+            "nodeType": "CONNECTION",
+            "connectionId": "2581eb287bb1d9bd29ae9886d675f89f",
+            "connectorId": "flowConnector",
+            "name": "Flow Connector",
+            "label": "Flow Connector",
+            "status": "configured",
+            "capabilityName": "startUiSubFlow",
+            "type": "trigger",
+            "properties": {
+              "subFlowId": {
+                "value": {
+                  "label": "CIAM Plus - Profile Management - Basic Profile Management - Main Flow",
+                  "value": "787a92e7ab4b88fc7f366eab4cff9549"
+                }
+              },
+              "subFlowVersionId": {
+                "value": -1
+              },
+              "nodeTitle": {
+                "value": "Call Basic Profile Management subflow"
+              }
+            }
+          },
+          "position": {
+            "x": 1264,
+            "y": 424
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "e2yznzfkzt",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 1084,
+            "y": 664
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "p02a004nfc",
+            "nodeType": "CONNECTION",
+            "connectionId": "2581eb287bb1d9bd29ae9886d675f89f",
+            "connectorId": "flowConnector",
+            "name": "Flow Connector",
+            "label": "Flow Connector",
+            "status": "configured",
+            "capabilityName": "startUiSubFlow",
+            "type": "trigger",
+            "properties": {
+              "subFlowId": {
+                "value": {
+                  "label": "CIAM Plus - Profile Management - Change Password - Main Flow",
+                  "value": "4356858f3ae046ff20f54729f54a0bd3"
+                }
+              },
+              "subFlowVersionId": {
+                "value": -1
+              },
+              "nodeTitle": {
+                "value": "Call Change Password subflow"
+              }
+            }
+          },
+          "position": {
+            "x": 1264,
+            "y": 664
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tioqbwmqoc",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 1078.3999156729963,
+            "y": 937.2647919334022
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3vf0v38pkw",
+            "nodeType": "CONNECTION",
+            "connectionId": "2581eb287bb1d9bd29ae9886d675f89f",
+            "connectorId": "flowConnector",
+            "name": "Flow Connector",
+            "label": "Flow Connector",
+            "status": "configured",
+            "capabilityName": "startUiSubFlow",
+            "type": "trigger",
+            "properties": {
+              "subFlowId": {
+                "value": {
+                  "label": "CIAM Plus - Profile Management - View Agreement TOS",
+                  "value": "6b11c8b54b472ce22d38397580d7237f"
+                }
+              },
+              "subFlowVersionId": {
+                "value": -1
+              },
+              "nodeTitle": {
+                "value": "Call View Terms of Service Subflow"
+              }
+            }
+          },
+          "position": {
+            "x": 1264,
+            "y": 934
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "432x0fhnc5",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 1078.3999156729963,
+            "y": 1219.5350394125903
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "axlqlj3o0c",
+            "nodeType": "CONNECTION",
+            "connectionId": "2581eb287bb1d9bd29ae9886d675f89f",
+            "connectorId": "flowConnector",
+            "name": "Flow Connector",
+            "label": "Flow Connector",
+            "status": "configured",
+            "capabilityName": "startUiSubFlow",
+            "type": "trigger",
+            "properties": {
+              "subFlowId": {
+                "value": {
+                  "label": "CIAM Plus - MFA Device Management - Main Flow",
+                  "value": "2b83798f975bd6681ebc8bc85030c0b4"
+                }
+              },
+              "subFlowVersionId": {
+                "value": -1
+              },
+              "nodeTitle": {
+                "value": "Call manage MFA device subflow"
+              }
+            }
+          },
+          "position": {
+            "x": 1264,
+            "y": 1234
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "s36zg59eob",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "gxy055e6w4": {
+                "value": "anyTriggersFalse"
+              },
+              "biuh6h1p3b": {
+                "value": "anyTriggersFalse"
+              },
+              "s1gh5gxxs6": {
+                "value": "anyTriggersFalse"
+              },
+              "67v2bm3gep": {
+                "value": "anyTriggersFalse"
+              },
+              "7eee6w5m6e": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 1384,
+            "y": 424
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ho9rngud32",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "createSuccessResponse",
+            "type": "action",
+            "properties": {
+              "customScript": {},
+              "nodeTitle": {
+                "value": "Send Success Resposne"
+              },
+              "backgroundColor": {
+                "value": "#9dc967ff"
+              }
+            }
+          },
+          "position": {
+            "x": 1586.486361135535,
+            "y": 429.17834647086346
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xdro5lo91x",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "createSuccessResponse",
+            "type": "action",
+            "properties": {
+              "customScript": {},
+              "nodeTitle": {
+                "value": "Send Success Resposne"
+              },
+              "backgroundColor": {
+                "value": "#9dc967ff"
+              }
+            },
+            "idUnique": "z3ogkj77b1"
+          },
+          "position": {
+            "x": 1594,
+            "y": 664
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tmbzp5dfnb",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "createSuccessResponse",
+            "type": "action",
+            "properties": {
+              "customScript": {},
+              "nodeTitle": {
+                "value": "Send Success Resposne"
+              },
+              "backgroundColor": {
+                "value": "#9dc967ff"
+              }
+            },
+            "idUnique": "h4o3z0cel7"
+          },
+          "position": {
+            "x": 1586.486361135535,
+            "y": 937.2647919334022
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "fab15bg1ik",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "createSuccessResponse",
+            "type": "action",
+            "properties": {
+              "customScript": {},
+              "nodeTitle": {
+                "value": "Send Success Resposne"
+              },
+              "backgroundColor": {
+                "value": "#9dc967ff"
+              }
+            },
+            "idUnique": "u2zchejx4n"
+          },
+          "position": {
+            "x": 1586.486361135535,
+            "y": 1219.5350394125903
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lakh8qeo4c",
+            "nodeType": "EVAL",
+            "properties": {
+              "mjctnhzwju": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 1414,
+            "y": 664
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "say8i6hoon",
+            "nodeType": "EVAL",
+            "properties": {
+              "02rofrtlp2": {
+                "value": "anyTriggersFalse"
+              },
+              "kld89q85b2": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 1414,
+            "y": 934
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "pwycrlovp9",
+            "nodeType": "EVAL",
+            "properties": {
+              "tlij32833y": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 1417.1242126480222,
+            "y": 1219.5350394125903
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "s1gh5gxxs6",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "createErrorResponse",
+            "type": "action",
+            "properties": {
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n\\tclass=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n\\t<div class=\\\"mh-100\\\" style=\\\"max-width: 400px; width: 100%;\\\">\\n\\t\\t<div class=\\\"card shadow mb-5\\\">\\n\\t\\t\\t<div class=\\\"card-body p-5 d-flex flex-column\\\">\\n\\t\\t\\t\\t<img\\n                    class=\\\"align-self-center mb-5\\\"\\n                    src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"ciam_logoUrl\",\n        \"data\": \"{{global.company.variables.ciam_logoUrl}}\",\n        \"tooltip\": \"{{global.company.variables.ciam_logoUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.company.variables.ciam_logoUrl}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"\\n                    alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"ciam_companyName\",\n        \"data\": \"{{global.company.variables.ciam_companyName}}\",\n        \"tooltip\": \"{{global.company.variables.ciam_companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.company.variables.ciam_companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"\\n                    style=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"ciam_logoStyle\",\n        \"data\": \"{{global.company.variables.ciam_logoStyle}}\",\n        \"tooltip\": \"{{global.company.variables.ciam_logoStyle}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.company.variables.ciam_logoStyle}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"\\n                />\\n\\t\\t\\t\\t<h1 class=\\\"text-center mb-4\\\">Error</h1>\\n\\t\\t\\t\\t<p class=\\\"text-muted text-center\\\">\\n\\t\\t\\t\\t\\t\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"flow-connector.svg\",\n        \"url\": \"ciam_errorMessage\",\n        \"data\": \"{{local.8v2a2cylz9.payload.output.ciam_errorMessage}}\",\n        \"tooltip\": \"{{local.8v2a2cylz9.payload.output.ciam_errorMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"ciam_errorMessage\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n\\t\\t\\t\\t</p>\\n\\t\\t\\t\\t<button data-id=\\\"button\\\" type=\\\"submit\\\" class=\\\"btn btn-primary mb-3\\\" data-skcomponent=\\\"skbutton\\\"\\n\\t\\t\\t\\t\\tdata-skbuttontype=\\\"form-submit\\\" data-skform=\\\"form\\\" id=\\\"btnContinue\\\"\\n\\t\\t\\t\\t\\tdata-skbuttonvalue=\\\"CONTINUE\\\">\\n\\t\\t\\t\\t\\tContinue\\n\\t\\t\\t\\t</button>\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t</div>\\n</div>\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Send Error Resposne"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "claimsNameValuePairs": {
+                "value": [
+                  {
+                    "name": "ciam_errorMessage",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"flow-connector.svg\",\n        \"url\": \"ciam_errorMessage\",\n        \"data\": \"{{local.8v2a2cylz9.payload.output.ciam_errorMessage}}\",\n        \"tooltip\": \"{{local.8v2a2cylz9.payload.output.ciam_errorMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"ciam_errorMessage\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.8054336526431403,
+                    "label": "ciam_errorMessage (string - flowInstance)",
+                    "type": "string",
+                    "nameDefault": "ciam_errorMessage"
+                  }
+                ]
+              },
+              "backgroundColor": {
+                "value": "#ffc8c1ff"
+              }
+            },
+            "idUnique": "j9qu7wxk3k",
+            "isDisabled": false
+          },
+          "position": {
+            "x": 1594,
+            "y": 544
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mjctnhzwju",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "createErrorResponse",
+            "type": "action",
+            "properties": {
+              "claimsNameValuePairs": {
+                "value": [
+                  {
+                    "name": "ciam_errorMessage",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"flow-connector.svg\",\n        \"url\": \"ciam_errorMessage\",\n        \"data\": \"{{local.p02a004nfc.payload.output.ciam_errorMessage}}\",\n        \"tooltip\": \"{{local.p02a004nfc.payload.output.ciam_errorMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"ciam_errorMessage\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.5223769108868126,
+                    "label": "ciam_errorMessage (string - flowInstance)",
+                    "type": "string",
+                    "nameDefault": "ciam_errorMessage"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Send Error Resposne"
+              },
+              "backgroundColor": {
+                "value": "#ffc8c1ff"
+              }
+            }
+          },
+          "position": {
+            "x": 1594,
+            "y": 784
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kld89q85b2",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "createErrorResponse",
+            "type": "action",
+            "properties": {
+              "claimsNameValuePairs": {
+                "value": [
+                  {
+                    "name": "ciam_errorMessage",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"flow-connector.svg\",\n        \"url\": \"ciam_errorMessage\",\n        \"data\": \"{{local.3vf0v38pkw.payload.output.ciam_errorMessage}}\",\n        \"tooltip\": \"{{local.3vf0v38pkw.payload.output.ciam_errorMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"ciam_errorMessage\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.9899206006080679,
+                    "label": "ciam_errorMessage (string - flowInstance)",
+                    "type": "string",
+                    "nameDefault": "ciam_errorMessage"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Send Error Resposne"
+              },
+              "backgroundColor": {
+                "value": "#ffc8c1ff"
+              }
+            }
+          },
+          "position": {
+            "x": 1588.5,
+            "y": 1078.267578125
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tlij32833y",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "createErrorResponse",
+            "type": "action",
+            "properties": {
+              "claimsNameValuePairs": {
+                "value": [
+                  {
+                    "name": "ciam_errorMessage",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"flow-connector.svg\",\n        \"url\": \"ciam_errorMessage\",\n        \"data\": \"{{local.axlqlj3o0c.payload.output.ciam_errorMessage}}\",\n        \"tooltip\": \"{{local.axlqlj3o0c.payload.output.ciam_errorMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"ciam_errorMessage\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.21826562593873056,
+                    "label": "ciam_errorMessage (string - flowInstance)",
+                    "type": "string",
+                    "nameDefault": "ciam_errorMessage"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Send Error Resposne"
+              },
+              "backgroundColor": {
+                "value": "#ffc8c1ff"
+              }
+            }
+          },
+          "position": {
+            "x": 1582.5,
+            "y": 1370.267578125
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3j4okm16xe",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "CIAM Plus- User Profile Management - Main flow"
+              },
+              "width": {
+                "value": 1800
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 8
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 535.3678724057373,
+            "y": 240.91554258258182
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "oe5wto6jfo",
+            "source": "say8i6hoon",
+            "target": "kld89q85b2"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "a0dh690l8",
+            "source": "s36zg59eob",
+            "target": "s1gh5gxxs6"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xsr5albjow",
+            "source": "lakh8qeo4c",
+            "target": "mjctnhzwju"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qv8fl9t0lw",
+            "source": "s36zg59eob",
+            "target": "ho9rngud32"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ozhjey1q4j",
+            "source": "8v2a2cylz9",
+            "target": "s36zg59eob"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "exbgpk1yhm",
+            "source": "p02a004nfc",
+            "target": "lakh8qeo4c"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ptg5ca9jr7",
+            "source": "3vf0v38pkw",
+            "target": "say8i6hoon"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "16g8n60o7j",
+            "source": "lakh8qeo4c",
+            "target": "xdro5lo91x"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "j3omlo4ah4",
+            "source": "say8i6hoon",
+            "target": "tmbzp5dfnb"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "gs6nh36kjn",
+            "source": "axlqlj3o0c",
+            "target": "pwycrlovp9"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qqns1bip4w",
+            "source": "pwycrlovp9",
+            "target": "fab15bg1ik"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "osxvkqjdcb",
+            "source": "l02p45qsuj",
+            "target": "3yj120rjtd"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "uyoa8m4kyi",
+            "source": "3yj120rjtd",
+            "target": "le9zdwy6vr"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zcb5ljjnbv",
+            "source": "le9zdwy6vr",
+            "target": "wd6f1e7218",
+            "multiValueSourceId": "izycvylmik"
+          },
+          "position": {
+            "x": 64,
+            "y": 52
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3qyn317ufi",
+            "source": "wd6f1e7218",
+            "target": "8v2a2cylz9"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "bzgayu1cyd",
+            "source": "le9zdwy6vr",
+            "target": "e2yznzfkzt",
+            "multiValueSourceId": "9ozfxizjc8"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "88gp5pnclo",
+            "source": "e2yznzfkzt",
+            "target": "p02a004nfc"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "bw47wy7260",
+            "source": "le9zdwy6vr",
+            "target": "tioqbwmqoc",
+            "multiValueSourceId": "qq446le76b"
+          },
+          "position": {
+            "x": 64,
+            "y": 132
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3hkn2s95bw",
+            "source": "tioqbwmqoc",
+            "target": "3vf0v38pkw"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ht1svkoik6",
+            "source": "le9zdwy6vr",
+            "target": "432x0fhnc5",
+            "multiValueSourceId": "gds6bwka9y"
+          },
+          "position": {
+            "x": 64,
+            "y": 172
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "917lsqml7t",
+            "source": "432x0fhnc5",
+            "target": "axlqlj3o0c"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rptrhcmnt4",
+            "source": "pwycrlovp9",
+            "target": "tlij32833y"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#AFD5FF",
+  "savedDate": 1711710129523,
+  "variables": [
+    {
+      "context": "company",
+      "createdDate": 1711693567271,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "value": "Ping Identity",
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "ciam_companyName##SK##company",
+      "companyId": "5493ac6e-6a9a-4c1a-b09b-49a37861b9e8"
+    },
+    {
+      "context": "company",
+      "createdDate": 1711693567269,
+      "fields": {
+        "type": "string",
+        "displayName": "CSS style for company logo",
+        "value": "width: 65px; height: 65px;",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "ciam_logoStyle##SK##company",
+      "companyId": "5493ac6e-6a9a-4c1a-b09b-49a37861b9e8"
+    },
+    {
+      "context": "company",
+      "createdDate": 1711693567270,
+      "fields": {
+        "type": "string",
+        "displayName": "URL of company logo",
+        "value": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "ciam_logoUrl##SK##company",
+      "companyId": "5493ac6e-6a9a-4c1a-b09b-49a37861b9e8"
+    }
+  ],
+  "connections": []
+}
